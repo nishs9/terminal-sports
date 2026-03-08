@@ -28,6 +28,7 @@ pub fn run_app<B: Backend>(
                 match key.code {
                     KeyCode::Char('q') => break,
                     KeyCode::Char('r') => refresh_games(&mut app_state, &mut client),
+                    KeyCode::Char('l') => app_state.toggle_league(),
                     KeyCode::Up => app_state.move_up(),
                     KeyCode::Down => app_state.move_down(),
                     _ => {}
@@ -43,9 +44,8 @@ fn refresh_games(app_state: &mut AppState, client: &mut api::ApiClient) {
 
     match client.fetch_games(&app_state.league) {
         Ok(games) => {
-            log::info!("Refreshed games: {:?}", games.len());
-            log::info!("Selected game index: {:?}", app_state.selected_game_idx);
-            log::info!("Games: {:?}", games);
+            log::debug!("Refreshed games: {:?}", games.len());
+            log::debug!("Selected game index: {:?}", app_state.selected_game_idx);
             app_state.set_games(games);
             app_state.complete_refresh();
         }

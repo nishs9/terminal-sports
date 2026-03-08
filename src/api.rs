@@ -145,8 +145,7 @@ fn fetch_scoreboard_json(url: &str) -> Result<Value, String> {
         .json::<Value>()
         .map_err(|err| format!("Failed to parse JSON: {}", err))?;
 
-    log::debug!("Fetched JSON: {:?}", json);
-
+    log::info!("Successfully fetched JSON!");
     Ok(json)
 }
 

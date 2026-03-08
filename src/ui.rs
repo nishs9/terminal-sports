@@ -82,13 +82,15 @@ fn build_status_line(app_state: &AppState) -> String {
     } else if let Some(err) = &app_state.last_error {
         format!("Error: {}", err)
     } else if app_state.last_refresh.is_some() {
-        format!("Last refresh - {:?}", app_state.last_timestamp.unwrap())
+        let last_timestamp = app_state.last_timestamp.unwrap();
+        let formatted_timestamp = last_timestamp.format("%Y-%m-%d %H:%M:%S").to_string();
+        format!("Last refresh - {}", formatted_timestamp)
     } else {
         "Last refresh: Never".to_string()
     };
 
     format!(
-        "League: {} | {} | ↑/↓ move | r - refresh | q -quit",
+        "Current League: {} | {} | ↑/↓ move | r - refresh | l - toggle league (WBC/MLB) | q - quit",
         league,
         refresh_status,
     )

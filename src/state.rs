@@ -74,4 +74,12 @@ impl AppState {
         self.last_refresh = Some(Instant::now());
         self.last_timestamp = Some(chrono::offset::Local::now());
     }
+
+    pub fn toggle_league(&mut self) {
+        self.league = match self.league {
+            League::Wbc => League::Mlb,
+            League::Mlb => League::Wbc,
+        };
+        log::info!("Toggled league to: {:?}", self.league);
+    }
 }
