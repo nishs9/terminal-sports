@@ -10,3 +10,36 @@ pub struct AppState {
     pub is_refreshing: bool,
     pub last_error: Option<String>,
 }
+
+impl AppState {
+    pub fn new(games: Vec<GameSummary>) -> Self {
+        Self {
+            league: League::Wbc,
+            games,
+            selected_game_idx: 0,
+            last_refresh: None,
+            is_refreshing: false,
+            last_error: None,
+        }
+    }
+
+    pub fn move_up(&mut self) {
+        if self.games.is_empty() {
+            return;
+        }
+
+        if self.selected_game_idx > 0 {
+            self.selected_game_idx -= 1;
+        }
+    }
+
+    pub fn move_down(&mut self) {
+        if self.games.is_empty() {
+            return;
+        }
+
+        if self.selected_game_idx + 1 < self.games.len() {
+            self.selected_game_idx += 1;
+        }
+    }
+}

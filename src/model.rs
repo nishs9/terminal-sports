@@ -8,9 +8,9 @@ pub enum GameStatus {
     Scheduled,
     InProgress,
     Final,
-    Postponed,
-    Canceled,
-    Delayed,
+    // Postponed,
+    // Canceled,
+    // Delayed,
 }
 
 pub struct BaseState {
