@@ -4,6 +4,7 @@ mod state;
 mod ui;
 mod app;
 mod utils;
+mod logger;
 
 use ratatui::{
     backend::CrosstermBackend,
@@ -21,6 +22,9 @@ use crossterm::{
 use std::io;
 
 fn main() -> Result<(), io::Error> {
+    logger::init_logger().expect("Failed to initialize service logger");
+    log::info!("Starting live MLB scoreboard service!");
+    
     // enable raw mode to capture keystrokes
     enable_raw_mode()?;
     let mut stdout = io::stdout();
@@ -30,6 +34,8 @@ fn main() -> Result<(), io::Error> {
     let mut terminal = Terminal::new(backend)?;
 
     let result = app::run_app(&mut terminal);
+
+    log::info!("Shutting down live MLB scoreboard service!");
     
     disable_raw_mode()?;
     execute!(terminal.backend_mut(), LeaveAlternateScreen)?;

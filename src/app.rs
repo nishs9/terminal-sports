@@ -8,7 +8,7 @@ use ratatui::{
 use crate::model::League;
 use crate::api;
 use std::io;
-use std::time::{Instant, Duration};
+use std::time::Duration;
 
 pub fn run_app<B: Backend>(
     terminal: &mut Terminal<B>
