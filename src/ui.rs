@@ -14,7 +14,6 @@ use ratatui::{
     }
 };
 use crate::model::{League, GameSummary, GameStatus};
-use chrono;
 
 pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let area = frame.size();

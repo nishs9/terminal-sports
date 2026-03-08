@@ -37,9 +37,15 @@ fn main() -> Result<(), io::Error> {
 
     log::info!("Shutting down live MLB scoreboard service!");
     
-    disable_raw_mode()?;
-    execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
-    terminal.show_cursor()?;
+    // Always run teardown logic to restore terminal state, even on error
+    if let Err(e) = (|| -> Result<(), io::Error> {
+        disable_raw_mode()?;
+        execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
+        terminal.show_cursor()?;
+        Ok(())
+    })() {
+        eprintln!("Failed to restore terminal state: {}", e);
+    }
 
     result
 }

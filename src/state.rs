@@ -29,7 +29,8 @@ impl AppState {
 
     pub fn set_games(&mut self, games: Vec<GameSummary>) {
         self.games = games;
-        
+        log::info!("Setting games: selected game index is {}", self.selected_game_idx);
+        log::info!("Games: {:?}", self.games.len());
         if self.selected_game_idx >= self.games.len() {
             self.selected_game_idx = self.games.len() - 1;
         }
