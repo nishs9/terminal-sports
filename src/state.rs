@@ -1,5 +1,7 @@
 use crate::model::{League, GameSummary};
 use std::time::Instant;
+use chrono;
+use chrono::{DateTime, Local};
 
 pub struct AppState {
     pub league: League,
@@ -7,6 +9,7 @@ pub struct AppState {
     pub selected_game_idx: usize,
 
     pub last_refresh: Option<Instant>,
+    pub last_timestamp: Option<DateTime<Local>>,
     pub is_refreshing: bool,
     pub last_error: Option<String>,
 }
@@ -18,6 +21,7 @@ impl AppState {
             games,
             selected_game_idx: 0,
             last_refresh: None,
+            last_timestamp: None,
             is_refreshing: false,
             last_error: None,
         }
@@ -25,7 +29,10 @@ impl AppState {
 
     pub fn set_games(&mut self, games: Vec<GameSummary>) {
         self.games = games;
-        self.selected_game_idx = 0;
+        
+        if self.selected_game_idx >= self.games.len() {
+            self.selected_game_idx = self.games.len() - 1;
+        }
     }
 
     pub fn move_up(&mut self) {
@@ -46,5 +53,24 @@ impl AppState {
         if self.selected_game_idx + 1 < self.games.len() {
             self.selected_game_idx += 1;
         }
+    }
+
+    pub fn start_refresh(&mut self) {
+        self.is_refreshing = true;
+        self.last_error = None;
+        self.last_timestamp = None;
+    }
+
+    pub fn complete_refresh(&mut self) {
+        self.is_refreshing = false;
+        self.last_refresh = Some(Instant::now());
+        self.last_timestamp = Some(chrono::offset::Local::now());
+    }
+
+    pub fn set_refresh_err(&mut self, err: String) {
+        self.is_refreshing = false;
+        self.last_error = Some(err);
+        self.last_refresh = Some(Instant::now());
+        self.last_timestamp = Some(chrono::offset::Local::now());
     }
 }

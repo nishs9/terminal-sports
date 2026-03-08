@@ -14,6 +14,7 @@ use ratatui::{
     }
 };
 use crate::model::{League, GameSummary, GameStatus};
+use chrono;
 
 pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let area = frame.size();
@@ -74,8 +75,7 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
 fn build_status_line(app_state: &AppState) -> String {
     let league = match app_state.league {
         League::Wbc => "WBC",
-        League::MlbSpring => "MLB Spring Training",
-        League::MlbRegSzn => "MLB Regular Season",
+        League::Mlb => "MLB",
     };
 
     let refresh_status = if app_state.is_refreshing {
@@ -83,7 +83,7 @@ fn build_status_line(app_state: &AppState) -> String {
     } else if let Some(err) = &app_state.last_error {
         format!("Error: {}", err)
     } else if app_state.last_refresh.is_some() {
-        "Last refresh just now!".to_string()
+        format!("Last refresh - {:?}", app_state.last_timestamp.unwrap())
     } else {
         "Last refresh: Never".to_string()
     };

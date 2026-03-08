@@ -1,7 +1,7 @@
+#[derive(Clone)]
 pub enum League {
     Wbc,
-    MlbSpring,
-    MlbRegSzn
+    Mlb,
 }
 
 pub enum GameStatus {

@@ -18,7 +18,6 @@ use crossterm::{
         LeaveAlternateScreen,
     },
 };
-use state::AppState;
 use std::io;
 
 fn main() -> Result<(), io::Error> {
@@ -30,10 +29,7 @@ fn main() -> Result<(), io::Error> {
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
 
-    let init_games = utils::get_mock_data();
-    let mut app_state = AppState::new(init_games);
-
-    let result = app::run_app(&mut terminal, &mut app_state);
+    let result = app::run_app(&mut terminal);
     
     disable_raw_mode()?;
     execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
