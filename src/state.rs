@@ -23,6 +23,11 @@ impl AppState {
         }
     }
 
+    pub fn set_games(&mut self, games: Vec<GameSummary>) {
+        self.games = games;
+        self.selected_game_idx = 0;
+    }
+
     pub fn move_up(&mut self) {
         if self.games.is_empty() {
             return;
