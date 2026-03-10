@@ -1,6 +1,5 @@
 use crate::model::{League, GameSummary};
 use std::time::Instant;
-use chrono;
 use chrono::{DateTime, Local};
 
 pub struct AppState {

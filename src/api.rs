@@ -29,7 +29,7 @@ impl ApiClient {
         let url = get_league_url(league);
         log::info!("Fetching {:?} scoreboard from {}", league, url);
 
-        match fetch_scoreboard_json(&url)
+        match fetch_scoreboard_json(url)
             .and_then(|json| create_game_summaries(&json, league)) {
                 Ok(games) => {
                     log::info!("Successfully fetched games for {:?}", league);
@@ -201,28 +201,28 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
                 on_third: situation["onThird"].as_bool().unwrap_or(false),
             };
             Some(GameSummary {
-                game_id: game_id,
+                game_id,
                 league: league.clone(),
-                away_team_abbrev: away_team_abbrev,
-                home_team_abbrev: home_team_abbrev,
-                away_team_score: away_team_score,
-                home_team_score: home_team_score,
-                game_status: game_status,
+                away_team_abbrev,
+                home_team_abbrev,
+                away_team_score,
+                home_team_score,
+                game_status,
                 status_text: status_text.clone(),
-                balls: balls,
-                strikes: strikes,
-                outs: outs,
+                balls,
+                strikes,
+                outs,
                 bases: Some(bases),
             })
         },
         _ => Some(GameSummary {
-            game_id: game_id,
+            game_id,
             league: league.clone(),
-            away_team_abbrev: away_team_abbrev,
-            home_team_abbrev: home_team_abbrev,
-            away_team_score: away_team_score,
-            home_team_score: home_team_score,
-            game_status: game_status,
+            away_team_abbrev,
+            home_team_abbrev,
+            away_team_score,
+            home_team_score,
+            game_status,
             status_text: status_text.clone(),
             balls: Some(balls),
             strikes: Some(strikes),

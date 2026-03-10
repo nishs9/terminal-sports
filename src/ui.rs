@@ -51,8 +51,8 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let list_chunks = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([
-            Constraint::Percentage(25),
-            Constraint::Percentage(75),
+            Constraint::Percentage(10),
+            Constraint::Percentage(90),
         ])
         .split(list_rect);
     let list_sidebar = list_chunks[0];
@@ -63,9 +63,10 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         frame.render_widget(empty, list_main);
         return;
     } else {
-        let mut sidebar_items: Vec<ListItem> = Vec::new();
-        sidebar_items.push(ListItem::new("WBC"));
-        sidebar_items.push(ListItem::new("MLB"));
+        let sidebar_items: Vec<ListItem> = vec![
+            ListItem::new("WBC"),
+            ListItem::new("MLB"),
+        ];
 
         let sidebar_list = List::new(sidebar_items)
             .highlight_symbol("# ")

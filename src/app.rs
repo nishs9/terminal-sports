@@ -23,16 +23,15 @@ pub fn run_app<B: Backend>(
             refresh_games(&mut app_state, &mut client);
         }
 
-        if event::poll(Duration::from_millis(100))? {
-            if let Event::Key(key) = event::read()? {
-                match key.code {
-                    KeyCode::Char('q') => break,
-                    KeyCode::Char('r') => refresh_games(&mut app_state, &mut client),
-                    KeyCode::Char('l') => app_state.toggle_league(),
-                    KeyCode::Up => app_state.move_up(),
-                    KeyCode::Down => app_state.move_down(),
-                    _ => {}
-                }
+        if event::poll(Duration::from_millis(100))?
+            && let Event::Key(key) = event::read()? {
+            match key.code {
+                KeyCode::Char('q') => break,
+                KeyCode::Char('r') => refresh_games(&mut app_state, &mut client),
+                KeyCode::Char('l') => app_state.toggle_league(),
+                KeyCode::Up => app_state.move_up(),
+                KeyCode::Down => app_state.move_down(),
+                _ => {}
             }
         }
     }
@@ -61,13 +60,8 @@ fn should_auto_refresh(app_state: &mut AppState) -> bool {
     }
 
     match app_state.last_refresh {
-        Some(last_refresh) => {
-            if last_refresh.elapsed() >= Duration::from_secs(10) {
-                true
-            } else {
-                false
-            }
-        },
+        Some(last_refresh) => 
+            last_refresh.elapsed() >= Duration::from_secs(10),
         None => true,
     }
 }

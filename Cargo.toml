@@ -1,5 +1,5 @@
 [package]
-name = "live_sports_service"
+name = "terminal_sports"
 version = "0.1.0"
 edition = "2024"
 
