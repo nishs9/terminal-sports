@@ -1,0 +1,308 @@
+[
+  {
+    "game_id": "401833104",
+    "league": "Mlb",
+    "away_team_abbrev": "TOR",
+    "home_team_abbrev": "BAL",
+    "away_team_score": 1,
+    "home_team_score": 0,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833111",
+    "league": "Mlb",
+    "away_team_abbrev": "PHI",
+    "home_team_abbrev": "MIN",
+    "away_team_score": 6,
+    "home_team_score": 7,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833113",
+    "league": "Mlb",
+    "away_team_abbrev": "BOS",
+    "home_team_abbrev": "PIT",
+    "away_team_score": 7,
+    "home_team_score": 9,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833115",
+    "league": "Mlb",
+    "away_team_abbrev": "ATL",
+    "home_team_abbrev": "TB",
+    "away_team_score": 8,
+    "home_team_score": 9,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833118",
+    "league": "Mlb",
+    "away_team_abbrev": "HOU",
+    "home_team_abbrev": "WSH",
+    "away_team_score": 1,
+    "home_team_score": 3,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833117",
+    "league": "Mlb",
+    "away_team_abbrev": "DET",
+    "home_team_abbrev": "TOR",
+    "away_team_score": 0,
+    "home_team_score": 5,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833109",
+    "league": "Mlb",
+    "away_team_abbrev": "STL",
+    "home_team_abbrev": "MIA",
+    "away_team_score": 2,
+    "home_team_score": 2,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833112",
+    "league": "Mlb",
+    "away_team_abbrev": "NYY",
+    "home_team_abbrev": "NYM",
+    "away_team_score": 4,
+    "home_team_score": 10,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833102",
+    "league": "Mlb",
+    "away_team_abbrev": "LAA",
+    "home_team_abbrev": "ATH",
+    "away_team_score": 3,
+    "home_team_score": 4,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 1,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833103",
+    "league": "Mlb",
+    "away_team_abbrev": "LAD",
+    "home_team_abbrev": "ATH",
+    "away_team_score": 7,
+    "home_team_score": 7,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 2,
+    "bases": {
+      "on_first": false,
+      "on_second": true,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833105",
+    "league": "Mlb",
+    "away_team_abbrev": "SF",
+    "home_team_abbrev": "CHC",
+    "away_team_score": 6,
+    "home_team_score": 5,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 1,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833106",
+    "league": "Mlb",
+    "away_team_abbrev": "KC",
+    "home_team_abbrev": "CHW",
+    "away_team_score": 4,
+    "home_team_score": 5,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 2,
+    "strikes": 2,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833107",
+    "league": "Mlb",
+    "away_team_abbrev": "ARI",
+    "home_team_abbrev": "CIN",
+    "away_team_score": 2,
+    "home_team_score": 6,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": true
+    }
+  },
+  {
+    "game_id": "401833116",
+    "league": "Mlb",
+    "away_team_abbrev": "LAA",
+    "home_team_abbrev": "TEX",
+    "away_team_score": 7,
+    "home_team_score": 6,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 1,
+    "bases": {
+      "on_first": true,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833108",
+    "league": "Mlb",
+    "away_team_abbrev": "CLE",
+    "home_team_abbrev": "COL",
+    "away_team_score": 3,
+    "home_team_score": 2,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 2,
+    "bases": {
+      "on_first": true,
+      "on_second": true,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833110",
+    "league": "Mlb",
+    "away_team_abbrev": "SEA",
+    "home_team_abbrev": "MIL",
+    "away_team_score": 3,
+    "home_team_score": 6,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 1,
+    "outs": 2,
+    "bases": {
+      "on_first": false,
+      "on_second": true,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401833114",
+    "league": "Mlb",
+    "away_team_abbrev": "CIN",
+    "home_team_abbrev": "SD",
+    "away_team_score": 2,
+    "home_team_score": 4,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  }
+]

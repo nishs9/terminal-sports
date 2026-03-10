@@ -42,18 +42,53 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let list_area = chunks[0];
     let status_area = chunks[1];
 
+    let list_rect = Rect {
+        x: list_area.x,
+        y: list_area.y,
+        width: list_area.width,
+        height: list_area.height,
+    };
+    let list_chunks = Layout::default()
+        .direction(Direction::Horizontal)
+        .constraints([
+            Constraint::Percentage(25),
+            Constraint::Percentage(75),
+        ])
+        .split(list_rect);
+    let list_sidebar = list_chunks[0];
+    let list_main = list_chunks[1];
+
     if app_state.games.is_empty() {
         let empty = Paragraph::new("No games found");
-        frame.render_widget(empty, inner);
+        frame.render_widget(empty, list_main);
         return;
     } else {
-        let items: Vec<ListItem> = app_state
+        let mut sidebar_items: Vec<ListItem> = Vec::new();
+        sidebar_items.push(ListItem::new("WBC"));
+        sidebar_items.push(ListItem::new("MLB"));
+
+        let sidebar_list = List::new(sidebar_items)
+            .highlight_symbol("# ")
+            .highlight_style(
+                Style::default()
+                    .add_modifier(Modifier::UNDERLINED | Modifier::BOLD),
+            );
+
+        let mut sidebar_list_state = ListState::default();
+        match app_state.league {
+            League::Wbc => sidebar_list_state.select(Some(0)),
+            League::Mlb => sidebar_list_state.select(Some(1)),
+        }
+
+        frame.render_stateful_widget(sidebar_list, list_sidebar, &mut sidebar_list_state);
+
+        let game_items: Vec<ListItem> = app_state
         .games
         .iter()
         .map(|game| ListItem::new(format_game_summary(game)))
         .collect();
 
-        let list = List::new(items)
+        let game_list = List::new(game_items)
             .highlight_symbol("> ")
             .highlight_style(
                 Style::default()
@@ -63,7 +98,7 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         let mut list_state = ListState::default();
         list_state.select(Some(app_state.selected_game_idx));
 
-        frame.render_stateful_widget(list, list_area, &mut list_state);
+        frame.render_stateful_widget(game_list, list_main, &mut list_state);
     }
 
     let status_bar_text = build_status_line(app_state);

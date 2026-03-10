@@ -230,5 +230,6 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             bases: Some(bases),
         })
     };
+    log::debug!("Parsed game summary: {:?}", game_summary);
     game_summary
 }
