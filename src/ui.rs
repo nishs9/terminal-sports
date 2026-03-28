@@ -110,6 +110,9 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         if selected_game.game_status == GameStatus::InProgress {
             let mut base_lines = vec![Line::from("")];
             generate_and_set_base_string(&selected_game.bases, &mut base_lines);
+            generate_and_set_situation_details(selected_game.balls
+                    .unwrap_or(0), selected_game.strikes.unwrap_or(0), 
+                    selected_game.outs.unwrap_or(0), &mut base_lines);
             let bases_paragraph = Paragraph::new(Text::from(base_lines));
             let info_paragraph = Paragraph::new(format_game_details(selected_game));
             let details_inner = game_details_box.inner(list_game_details);
@@ -283,10 +286,74 @@ fn generate_and_set_base_string(bases: &Option<BaseState>, lines: &mut Vec<Line>
     }
 }
 
+fn generate_and_set_situation_details(balls: u64, strikes: u64, outs: u64, lines: &mut Vec<Line>) {
+    lines.push(Line::from(""));
+    lines.push(Line::from(format!(
+        "B : {}", ball_char(balls)
+    )));
+    lines.push(Line::from(format!(
+        "S : {}", strike_char(strikes)
+    )));
+    lines.push(Line::from(format!(
+        "O : {}", out_char(outs)
+    )));
+}
+
 fn base_char(occupied: bool) -> &'static str {
     if occupied {
         "⬛"
     } else {
         "⬜"
     }
+}
+
+fn ball_char(balls: u64) -> String {
+    let black = "⚫";
+    let white = "⚪";
+    let mut result = String::new();
+    for i in 0..4 {
+        if i < balls {
+            result.push_str(black);
+        } else {
+            result.push_str(white);
+        }
+        if i != 3 {
+            result.push(' ');
+        }
+    }
+    result
+}
+
+fn strike_char(strikes: u64) -> String {
+    let black = "⚫";
+    let white = "⚪";
+    let mut result = String::new();
+    for i in 0..3 {
+        if i < strikes {
+            result.push_str(black);
+        } else {
+            result.push_str(white);
+        }
+        if i != 2 {
+            result.push(' ');
+        }
+    }
+    result
+}
+
+fn out_char(outs: u64) -> String {
+    let black = "⚫";
+    let white = "⚪";
+    let mut result = String::new();
+    for i in 0..3 {
+        if i < outs {
+            result.push_str(black);
+        } else {
+            result.push_str(white);
+        }
+        if i != 2 {
+            result.push(' ');
+        }
+    }
+    result
 }
