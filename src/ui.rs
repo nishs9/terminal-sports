@@ -149,6 +149,12 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
 fn format_game_details(game: &GameSummary) -> Text<'static> {
     let mut lines = Vec::new();
     if game.game_status == GameStatus::Scheduled {
+        lines.push(Line::from(""));
+        lines.push(Line::from(format!(
+            "{} @ {}",
+            game.away_team_abbrev, game.home_team_abbrev,
+        )));
+        lines.push(Line::from(""));
         match &game.odds {
             Some(odds) => {
                 lines.push(Line::from(format!(
@@ -192,6 +198,13 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
         }
         Text::from(lines)
     } else {
+        lines.push(Line::from(""));
+        lines.push(Line::from(format!(
+            "{} {:?} @ {} {:?}",
+            game.away_team_abbrev, game.away_team_score.unwrap_or(0),
+            game.home_team_abbrev, game.home_team_score.unwrap_or(0),
+        )));
+        lines.push(Line::from(""));
         lines.push(Line::from("No additional info about this matchup available"));
         Text::from(lines)
     }

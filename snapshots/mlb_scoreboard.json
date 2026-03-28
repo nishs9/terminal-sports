@@ -51,59 +51,26 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 4 : Ball 3",
+      "last_play": "Pitch 3 : Ball 3",
       "pitcher": {
         "id": "39645",
         "full_name": "Brendon Little"
       },
       "batter": {
-        "id": "4918085",
-        "full_name": "Denzel Clarke"
+        "id": "4966637",
+        "full_name": "Nick Kurtz"
       }
     },
     "away_team_abbrev": "ATH",
     "home_team_abbrev": "TOR",
     "short_inning": "Top 7th",
     "full_inning": "Top 7th",
-    "away_team_score": 1,
+    "away_team_score": 2,
     "home_team_score": 2,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 3,
-    "strikes": 1,
-    "outs": 1,
-    "bases": {
-      "on_first": true,
-      "on_second": true,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814711",
-    "game_date": "03-28 @ 01:05 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": {
-      "last_play": "Pitch 4 : Strike 2 Foul",
-      "pitcher": {
-        "id": "4311625",
-        "full_name": "Kyle Bradish"
-      },
-      "batter": {
-        "id": "32517",
-        "full_name": "Josh Bell"
-      }
-    },
-    "away_team_abbrev": "MIN",
-    "home_team_abbrev": "BAL",
-    "short_inning": "Top 4th",
-    "full_inning": "Top 4th",
-    "away_team_score": 0,
-    "home_team_score": 1,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 2,
-    "strikes": 2,
+    "strikes": 0,
     "outs": 1,
     "bases": {
       "on_first": true,
@@ -112,19 +79,52 @@
     }
   },
   {
+    "game_id": "401814711",
+    "game_date": "03-28 @ 01:05 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Pitch 2 : Strike 1 Looking",
+      "pitcher": {
+        "id": "4311625",
+        "full_name": "Kyle Bradish"
+      },
+      "batter": {
+        "id": "41587",
+        "full_name": "Ryan Jeffers"
+      }
+    },
+    "away_team_abbrev": "MIN",
+    "home_team_abbrev": "BAL",
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
+    "away_team_score": 1,
+    "home_team_score": 1,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 1,
+    "outs": 2,
+    "bases": {
+      "on_first": true,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
     "game_id": "401814713",
     "game_date": "03-28 @ 01:05 PM PST",
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 4 : Ball 2",
+      "last_play": "Pitch 1 : Strike 1 Swinging",
       "pitcher": {
         "id": "33709",
         "full_name": "Aaron Nola"
       },
       "batter": {
-        "id": "4917921",
-        "full_name": "Evan Carter"
+        "id": "35004",
+        "full_name": "Danny Jansen"
       }
     },
     "away_team_abbrev": "TEX",
@@ -135,11 +135,11 @@
     "home_team_score": 0,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 2,
-    "strikes": 2,
+    "balls": 0,
+    "strikes": 1,
     "outs": 2,
     "bases": {
-      "on_first": false,
+      "on_first": true,
       "on_second": false,
       "on_third": false
     }
@@ -149,30 +149,20 @@
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": {
-      "last_play": "Pitch 2 : Ball 1",
-      "pitcher": {
-        "id": "32082",
-        "full_name": "Sonny Gray"
-      },
-      "batter": {
-        "id": "39216",
-        "full_name": "Will Benson"
-      }
-    },
+    "details": null,
     "away_team_abbrev": "BOS",
     "home_team_abbrev": "CIN",
-    "short_inning": "Bot 3rd",
-    "full_inning": "Bottom 3rd",
+    "short_inning": "End 3rd",
+    "full_inning": "End 3rd",
     "away_team_score": 1,
     "home_team_score": 4,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 1,
-    "strikes": 1,
-    "outs": 1,
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
     "bases": {
-      "on_first": true,
+      "on_first": false,
       "on_second": false,
       "on_third": false
     }
@@ -183,27 +173,27 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 5 : Ball 2",
+      "last_play": "Eury Perez pitches to Troy Johnston",
       "pitcher": {
         "id": "4917854",
         "full_name": "Eury Perez"
       },
       "batter": {
-        "id": "34230",
-        "full_name": "Willi Castro"
+        "id": "4346111",
+        "full_name": "Troy Johnston"
       }
     },
     "away_team_abbrev": "COL",
     "home_team_abbrev": "MIA",
     "short_inning": "Top 4th",
     "full_inning": "Top 4th",
-    "away_team_score": 1,
+    "away_team_score": 3,
     "home_team_score": 1,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 2,
-    "strikes": 2,
-    "outs": 0,
+    "balls": 0,
+    "strikes": 0,
+    "outs": 1,
     "bases": {
       "on_first": false,
       "on_second": false,
@@ -215,11 +205,21 @@
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": null,
+    "details": {
+      "last_play": "David Peterson pitches to Joey Bart",
+      "pitcher": {
+        "id": "40921",
+        "full_name": "David Peterson"
+      },
+      "batter": {
+        "id": "41168",
+        "full_name": "Joey Bart"
+      }
+    },
     "away_team_abbrev": "PIT",
     "home_team_abbrev": "NYM",
-    "short_inning": "End 4th",
-    "full_inning": "End 4th",
+    "short_inning": "Top 5th",
+    "full_inning": "Top 5th",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "InProgress",
