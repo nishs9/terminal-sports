@@ -51,30 +51,30 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Louis Varland pitches to Tyler Soderstrom",
+      "last_play": "Tommy Nance pitches to Brent Rooker",
       "pitcher": {
-        "id": "4917888",
-        "full_name": "Louis Varland"
+        "id": "36385",
+        "full_name": "Tommy Nance"
       },
       "batter": {
-        "id": "4686066",
-        "full_name": "Tyler Soderstrom"
+        "id": "40926",
+        "full_name": "Brent Rooker"
       }
     },
     "away_team_abbrev": "ATH",
     "home_team_abbrev": "TOR",
-    "short_inning": "Top 10th",
-    "full_inning": "Top 10th",
+    "short_inning": "Top 7th",
+    "full_inning": "Top 7th",
     "away_team_score": 6,
-    "home_team_score": 6,
+    "home_team_score": 2,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
     "strikes": 0,
-    "outs": 0,
+    "outs": 2,
     "bases": {
-      "on_first": true,
-      "on_second": true,
+      "on_first": false,
+      "on_second": false,
       "on_third": false
     }
   },
@@ -84,27 +84,27 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 3 : Ball 2",
+      "last_play": "Pitch 4 : Strike 2 Looking",
       "pitcher": {
-        "id": "36049",
-        "full_name": "Dietrich Enns"
+        "id": "42480",
+        "full_name": "Taj Bradley"
       },
       "batter": {
-        "id": "41205",
-        "full_name": "Trevor Larnach"
+        "id": "4683371",
+        "full_name": "Coby Mayo"
       }
     },
     "away_team_abbrev": "MIN",
     "home_team_abbrev": "BAL",
-    "short_inning": "Top 7th",
-    "full_inning": "Top 7th",
-    "away_team_score": 3,
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
+    "away_team_score": 1,
     "home_team_score": 1,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 2,
-    "strikes": 1,
-    "outs": 0,
+    "strikes": 2,
+    "outs": 1,
     "bases": {
       "on_first": false,
       "on_second": false,
@@ -116,18 +116,28 @@
     "game_date": "03-28 @ 01:05 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": null,
+    "details": {
+      "last_play": "Harper grounded out to second.",
+      "pitcher": {
+        "id": "3210625",
+        "full_name": "Jacob Latz"
+      },
+      "batter": {
+        "id": "30951",
+        "full_name": "Bryce Harper"
+      }
+    },
     "away_team_abbrev": "TEX",
     "home_team_abbrev": "PHI",
-    "short_inning": "Mid 8th",
-    "full_inning": "Middle 8th",
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
     "away_team_score": 3,
     "home_team_score": 0,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
+    "balls": 1,
+    "strikes": 2,
+    "outs": 2,
     "bases": {
       "on_first": false,
       "on_second": false,
@@ -139,21 +149,31 @@
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": null,
+    "details": {
+      "last_play": "Rafaela singled to center, Narváez to second.",
+      "pitcher": {
+        "id": "41172",
+        "full_name": "Brady Singer"
+      },
+      "batter": {
+        "id": "4987382",
+        "full_name": "Ceddanne Rafaela"
+      }
+    },
     "away_team_abbrev": "BOS",
     "home_team_abbrev": "CIN",
-    "short_inning": "End 6th",
-    "full_inning": "End 6th",
-    "away_team_score": 3,
-    "home_team_score": 5,
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
+    "away_team_score": 1,
+    "home_team_score": 4,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
+    "balls": 1,
+    "strikes": 2,
+    "outs": 2,
     "bases": {
-      "on_first": false,
-      "on_second": false,
+      "on_first": true,
+      "on_second": true,
       "on_third": false
     }
   },
@@ -163,27 +183,27 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Jaden Hill pitches to Liam Hicks",
+      "last_play": "Michael Lorenzen pitches to Graham Pauley",
       "pitcher": {
-        "id": "4414362",
-        "full_name": "Jaden Hill"
+        "id": "33252",
+        "full_name": "Michael Lorenzen"
       },
       "batter": {
-        "id": "4725251",
-        "full_name": "Liam Hicks"
+        "id": "4622931",
+        "full_name": "Graham Pauley"
       }
     },
     "away_team_abbrev": "COL",
     "home_team_abbrev": "MIA",
-    "short_inning": "Bot 7th",
-    "full_inning": "Bottom 7th",
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
     "away_team_score": 3,
-    "home_team_score": 3,
+    "home_team_score": 1,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
     "strikes": 0,
-    "outs": 1,
+    "outs": 2,
     "bases": {
       "on_first": true,
       "on_second": false,
@@ -195,22 +215,32 @@
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": null,
+    "details": {
+      "last_play": "David Peterson pitches to Marcell Ozuna",
+      "pitcher": {
+        "id": "40921",
+        "full_name": "David Peterson"
+      },
+      "batter": {
+        "id": "31668",
+        "full_name": "Marcell Ozuna"
+      }
+    },
     "away_team_abbrev": "PIT",
     "home_team_abbrev": "NYM",
-    "short_inning": "Mid 8th",
-    "full_inning": "Middle 8th",
+    "short_inning": "Top 5th",
+    "full_inning": "Top 5th",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
     "strikes": 0,
-    "outs": 0,
+    "outs": 2,
     "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
+      "on_first": true,
+      "on_second": true,
+      "on_third": true
     }
   },
   {
@@ -326,7 +356,7 @@
     "game_date": "03-29 @ 05:40 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "SD -112",
+      "moneyline": "SD -110",
       "spread": "-1.5",
       "over_under": "8.0"
     },
@@ -353,9 +383,9 @@
     "game_date": "03-29 @ 06:10 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "LAD -252",
+      "moneyline": "LAD -246",
       "spread": "-1.5",
-      "over_under": "8.5"
+      "over_under": "9.0"
     },
     "details": null,
     "away_team_abbrev": "ARI",

@@ -128,6 +128,7 @@ fn get_game_status(game_status: &str) -> GameStatus {
         _ => panic!("Invalid game status: {}", game_status),
     }
 }
+
 fn get_league_url(league: &League) -> &'static str {
     match league {
         League::Wbc => "https://site.api.espn.com/apis/site/v2/sports/baseball/world-baseball-classic/scoreboard",
@@ -225,7 +226,7 @@ fn parse_game_odds(odds: &Value) -> Option<GameOdds> {
             // The API returns the spread from the perspective of the home team, we
             // always display it from the perspective of the favorite so we need to 
             // ensure the value is negative
-            let spread = s.as_f64().unwrap_or(0.0).abs() * -1.0;
+            let spread = -s.as_f64().unwrap_or(0.0).abs();
             if spread == 0.0 {
                 "EVEN".to_string()
             } else {
@@ -394,4 +395,46 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     };
     log::debug!("Parsed game summary: {:?}", game_summary);
     game_summary
+}
+
+#[cfg(test)]
+
+#[test]
+fn test_create_game_summaries() {
+    // Arrange 
+    let raw_json = match fs::read_to_string("resources/sample_mlb_api_response.json") {
+        Ok(json) => json,
+        Err(err) => panic!("Failed to read sample JSON: {}", err),
+    };
+
+    let root: Value = match serde_json::from_str(&raw_json) {
+        Ok(root) => root,
+        Err(err) => panic!("Failed to parse sample JSON: {}", err),
+    };
+
+    // Act
+    let game_summaries = match create_game_summaries(&root, &League::Mlb) {
+        Ok(game_summaries) => game_summaries,
+        Err(err) => panic!("Failed to create game summaries: {}", err),
+    };
+    
+    // Assert
+    let expected_game_summaries = _load_expected_game_summaries();
+    assert_eq!(game_summaries.len(), expected_game_summaries.len());
+    for (i, game_summary) in game_summaries.iter().enumerate() {
+        assert_eq!(game_summary, &expected_game_summaries[i]);
+    }
+}
+
+fn _load_expected_game_summaries() -> Vec<GameSummary> {
+    // create a vector of expected game summaries from the expected_game_summary.json file
+    let expected_game_summary = match fs::read_to_string("resources/expected_game_summary.json") {
+        Ok(json) => json,
+        Err(err) => panic!("Failed to read expected game summary: {}", err),
+    };
+    let expected_game_summaries: Vec<GameSummary> = match serde_json::from_str(&expected_game_summary) {
+        Ok(game_summaries) => game_summaries,
+        Err(err) => panic!("Failed to parse expected game summary: {}", err),
+    };
+    expected_game_summaries
 }
