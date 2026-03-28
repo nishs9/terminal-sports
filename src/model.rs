@@ -6,7 +6,7 @@ pub enum League {
     Wbc,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub enum GameStatus {
     Scheduled,
     InProgress,
@@ -30,9 +30,13 @@ pub struct GameSummary {
     pub league: League,
 
     pub odds: Option<GameOdds>,
+    pub details: Option<GameDetails>,
 
     pub away_team_abbrev: String,
     pub home_team_abbrev: String,
+
+    pub short_inning: String,
+    pub full_inning: String,
 
     pub away_team_score: Option<u64>,
     pub home_team_score: Option<u64>,
@@ -52,4 +56,17 @@ pub struct GameOdds {
     pub moneyline: String,
     pub spread: String,
     pub over_under: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct GameDetails {
+    pub last_play: String,
+    pub pitcher: Player,
+    pub batter: Player,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Player {
+    pub id: String,
+    pub full_name: String
 }

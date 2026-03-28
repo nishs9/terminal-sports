@@ -3,7 +3,6 @@ mod model;
 mod state;
 mod ui;
 mod app;
-mod utils;
 mod logger;
 
 use ratatui::{

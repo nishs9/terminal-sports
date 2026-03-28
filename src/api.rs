@@ -1,5 +1,12 @@
-use crate::model::{GameSummary, League, BaseState, GameStatus, GameOdds};
-use crate::utils::get_mock_data;
+use crate::model::{
+    GameSummary, 
+    League, 
+    BaseState, 
+    GameStatus, 
+    GameOdds, 
+    GameDetails,
+    Player
+};
 use rand::RngExt;
 use serde_json::Value;
 use std::{
@@ -62,10 +69,6 @@ impl ApiClient {
                     }
                 }
             }
-    }
-
-    pub fn fetch_mock_games(&mut self) -> Result<Vec<GameSummary>, String> {
-        Ok(get_mock_data())
     }
 
     fn save_snapshot(&mut self, league: &League, games: &[GameSummary]) -> Result<(), String> {
@@ -243,6 +246,38 @@ fn parse_game_odds(odds: &Value) -> Option<GameOdds> {
     })
 }
 
+fn parse_player(player: &Value) -> Result<Player, String> {
+    let id = player["id"].as_str().ok_or("missing id")?.to_string();
+    let full_name = player["fullName"].as_str().ok_or("missing fullName")?.to_string();
+    Ok(Player {
+        id,
+        full_name,
+    })
+}
+
+fn parse_game_details(details: &Value) -> Option<GameDetails> {
+    let last_play = details["lastPlay"]["text"].as_str()?.to_string();
+    let pitcher = match parse_player(&details["pitcher"]["athlete"]) {
+        Ok(pitcher) => pitcher,
+        Err(err) => {
+            log::error!("Failed to parse pitcher: {}", err);
+            return None;
+        }
+    };
+    let batter = match parse_player(&details["batter"]["athlete"]) {
+        Ok(batter) => batter,
+        Err(err) => {
+            log::error!("Failed to parse batter: {}", err);
+            return None;
+        }
+    };
+    Some(GameDetails {
+        last_play,
+        pitcher,
+        batter,
+    })
+}
+
 fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     let game_id = event["id"].as_str()?.to_string();
     let raw_date = event["date"].as_str()?.to_string();
@@ -266,6 +301,20 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     let home_team_score = parse_score(&home_team["score"]);
 
     let game_status = get_game_status(competition["status"]["type"]["state"].as_str()?);
+    let short_inning = match competition["status"]["type"]["shortDetail"].as_str() {
+        Some(s) => s.to_string(),
+        None => {
+            log::error!("Failed to parse short inning: no shortDetail found");
+            return None;
+        }
+    };
+    let full_inning = match competition["status"]["type"]["detail"].as_str() {
+        Some(s) => s.to_string(),
+        None => {
+            log::error!("Failed to parse full inning: no detail found");
+            return None;
+        }
+    };
     let status_text = competition["status"]["type"]["description"]
         .as_str()
         .unwrap_or("")
@@ -279,6 +328,8 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
         on_second: false,
         on_third: false,
     };
+
+    let game_details = parse_game_details(&event["competitions"][0]["situation"]);
 
     let game_summary = match game_status {
         GameStatus::InProgress => {
@@ -296,8 +347,11 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
                 game_date,
                 league: league.clone(),
                 odds,
+                details: game_details,
                 away_team_abbrev,
                 home_team_abbrev,
+                short_inning,
+                full_inning,
                 away_team_score,
                 home_team_score,
                 game_status,
@@ -313,8 +367,11 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             game_date,
             league: league.clone(),
             odds,
+            details: None,
             away_team_abbrev,
             home_team_abbrev,
+            short_inning,
+            full_inning,
             away_team_score,
             home_team_score,
             game_status,

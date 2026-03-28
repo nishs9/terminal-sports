@@ -119,23 +119,46 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
 
 fn format_game_details(game: &GameSummary) -> Text<'static> {
     let mut lines = Vec::new();
-    match &game.odds {
-        Some(odds) => {
-            lines.push(Line::from(format!(
-                "Moneyline: {}", odds.moneyline
-            )));
-            lines.push(Line::from(format!(
-                "Spread: {}", odds.spread
-            )));
-            lines.push(Line::from(format!(
-                "O/U: {}", odds.over_under
-            )));
+    if game.game_status == GameStatus::Scheduled {
+        match &game.odds {
+            Some(odds) => {
+                lines.push(Line::from(format!(
+                    "Moneyline: {}", odds.moneyline
+                )));
+                lines.push(Line::from(format!(
+                    "Spread: {}", odds.spread
+                )));
+                lines.push(Line::from(format!(
+                    "O/U: {}", odds.over_under
+                )));
+            }
+            None => {
+                lines.push(Line::from("No odds available at this time"));
+            }
         }
-        None => {
-            lines.push(Line::from("No odds available at this time"));
+        Text::from(lines)
+    } else if game.game_status == GameStatus::InProgress {
+        match &game.details {
+            Some(details) => {
+                lines.push(Line::from(format!(
+                    "Last play: {}", details.last_play
+                )));
+                lines.push(Line::from(format!(
+                    "Pitcher: {}", details.pitcher.full_name
+                )));
+                lines.push(Line::from(format!(
+                    "Batter: {}", details.batter.full_name
+                )));
+            }
+            None => {
+                lines.push(Line::from("No live game details available at this time"));
+            }
         }
+        Text::from(lines)
+    } else {
+        lines.push(Line::from("No additional info about this matchup available"));
+        Text::from(lines)
     }
-    Text::from(lines)
 }
 
 fn build_status_line(app_state: &AppState) -> String {
@@ -180,7 +203,7 @@ fn format_game_summary(game: &GameSummary) -> Text<'static> {
                 "{} {} @ {} {} | {} | {} outs | {}-{}",
                 game.away_team_abbrev, away_score,
                 game.home_team_abbrev, home_score,
-                game.status_text,
+                game.short_inning,
                 out,
                 balls,
                 strikes,

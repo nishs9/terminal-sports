@@ -4,14 +4,27 @@
     "game_date": "03-28 @ 11:15 AM PST",
     "league": "Mlb",
     "odds": null,
+    "details": {
+      "last_play": "Joe Boyle pitches to Nathan Church",
+      "pitcher": {
+        "id": "4298087",
+        "full_name": "Joe Boyle"
+      },
+      "batter": {
+        "id": "4843048",
+        "full_name": "Nathan Church"
+      }
+    },
     "away_team_abbrev": "TB",
     "home_team_abbrev": "STL",
+    "short_inning": "Bot 5th",
+    "full_inning": "Bottom 5th",
     "away_team_score": 0,
-    "home_team_score": 0,
+    "home_team_score": 2,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
-    "strikes": 2,
+    "strikes": 0,
     "outs": 0,
     "bases": {
       "on_first": false,
@@ -24,10 +37,23 @@
     "game_date": "03-28 @ 11:20 AM PST",
     "league": "Mlb",
     "odds": null,
+    "details": {
+      "last_play": "Cade Horton pitches to Brady House",
+      "pitcher": {
+        "id": "4692526",
+        "full_name": "Cade Horton"
+      },
+      "batter": {
+        "id": "4872681",
+        "full_name": "Brady House"
+      }
+    },
     "away_team_abbrev": "WSH",
     "home_team_abbrev": "CHC",
-    "away_team_score": 0,
-    "home_team_score": 0,
+    "short_inning": "Top 5th",
+    "full_inning": "Top 5th",
+    "away_team_score": 1,
+    "home_team_score": 5,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
@@ -43,22 +69,31 @@
     "game_id": "401814707",
     "game_date": "03-28 @ 12:07 PM PST",
     "league": "Mlb",
-    "odds": {
-      "moneyline": "TOR -199",
-      "spread": "-1.5",
-      "over_under": "8.0"
+    "odds": null,
+    "details": {
+      "last_play": "Pitch 3 : Strike 2 Swinging",
+      "pitcher": {
+        "id": "35397",
+        "full_name": "Jeffrey Springs"
+      },
+      "batter": {
+        "id": "5134636",
+        "full_name": "Kazuma Okamoto"
+      }
     },
     "away_team_abbrev": "ATH",
     "home_team_abbrev": "TOR",
+    "short_inning": "Bot 1st",
+    "full_inning": "Bottom 1st",
     "away_team_score": 0,
     "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 2,
+    "outs": 2,
     "bases": {
-      "on_first": false,
+      "on_first": true,
       "on_second": false,
       "on_third": false
     }
@@ -72,8 +107,11 @@
       "spread": "-1.5",
       "over_under": "7.5"
     },
+    "details": null,
     "away_team_abbrev": "MIN",
     "home_team_abbrev": "BAL",
+    "short_inning": "3/28 - 4:05 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -96,8 +134,11 @@
       "spread": "-1.5",
       "over_under": "7.5"
     },
+    "details": null,
     "away_team_abbrev": "TEX",
     "home_team_abbrev": "PHI",
+    "short_inning": "3/28 - 4:05 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -120,8 +161,11 @@
       "spread": "1.5",
       "over_under": "7.5"
     },
+    "details": null,
     "away_team_abbrev": "BOS",
     "home_team_abbrev": "CIN",
+    "short_inning": "3/28 - 4:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -144,8 +188,11 @@
       "spread": "-1.5",
       "over_under": "7.5"
     },
+    "details": null,
     "away_team_abbrev": "COL",
     "home_team_abbrev": "MIA",
+    "short_inning": "3/28 - 4:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -168,8 +215,11 @@
       "spread": "-1.5",
       "over_under": "7.5"
     },
+    "details": null,
     "away_team_abbrev": "PIT",
     "home_team_abbrev": "NYM",
+    "short_inning": "3/28 - 4:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -188,12 +238,15 @@
     "game_date": "03-28 @ 04:10 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "HOU -143",
+      "moneyline": "HOU -136",
       "spread": "-1.5",
-      "over_under": "9.0"
+      "over_under": "8.5"
     },
+    "details": null,
     "away_team_abbrev": "LAA",
     "home_team_abbrev": "HOU",
+    "short_inning": "3/28 - 7:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -214,10 +267,13 @@
     "odds": {
       "moneyline": "MIL -194",
       "spread": "-1.5",
-      "over_under": "8.5"
+      "over_under": "8.0"
     },
+    "details": null,
     "away_team_abbrev": "CHW",
     "home_team_abbrev": "MIL",
+    "short_inning": "3/28 - 7:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -240,8 +296,11 @@
       "spread": "-1.5",
       "over_under": "8.5"
     },
+    "details": null,
     "away_team_abbrev": "KC",
     "home_team_abbrev": "ATL",
+    "short_inning": "3/28 - 7:15 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -264,8 +323,11 @@
       "spread": "1.5",
       "over_under": "8.5"
     },
+    "details": null,
     "away_team_abbrev": "NYY",
     "home_team_abbrev": "SF",
+    "short_inning": "3/28 - 7:15 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -288,8 +350,11 @@
       "spread": "1.5",
       "over_under": "8.0"
     },
+    "details": null,
     "away_team_abbrev": "DET",
     "home_team_abbrev": "SD",
+    "short_inning": "3/28 - 8:40 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -312,8 +377,11 @@
       "spread": "-1.5",
       "over_under": "9.0"
     },
+    "details": null,
     "away_team_abbrev": "ARI",
     "home_team_abbrev": "LAD",
+    "short_inning": "3/28 - 9:10 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
@@ -332,12 +400,15 @@
     "game_date": "03-29 @ 06:40 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "SEA -186",
+      "moneyline": "SEA -194",
       "spread": "-1.5",
       "over_under": "7.0"
     },
+    "details": null,
     "away_team_abbrev": "CLE",
     "home_team_abbrev": "SEA",
+    "short_inning": "3/28 - 9:40 PM EDT",
+    "full_inning": "Scheduled",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "Scheduled",
