@@ -106,7 +106,7 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
             .borders(Borders::ALL);
 
         let selected_game = &app_state.games[app_state.selected_game_idx];
-        let _game_details = Paragraph::new(format_game_summary(selected_game)).block(game_details_box);
+        let _game_details = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
 
         frame.render_stateful_widget(game_list, list_main, &mut list_state);
         frame.render_widget(_game_details, list_game_details);
@@ -115,6 +115,27 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let status_bar_text = build_status_line(app_state);
     let status = Paragraph::new(status_bar_text);
     frame.render_widget(status, status_area);
+}
+
+fn format_game_details(game: &GameSummary) -> Text<'static> {
+    let mut lines = Vec::new();
+    match &game.odds {
+        Some(odds) => {
+            lines.push(Line::from(format!(
+                "Moneyline: {}", odds.moneyline
+            )));
+            lines.push(Line::from(format!(
+                "Spread: {}", odds.spread
+            )));
+            lines.push(Line::from(format!(
+                "O/U: {}", odds.over_under
+            )));
+        }
+        None => {
+            lines.push(Line::from("No odds available at this time"));
+        }
+    }
+    Text::from(lines)
 }
 
 fn build_status_line(app_state: &AppState) -> String {

@@ -1,4 +1,4 @@
-use crate::model::{GameSummary, League, BaseState, GameStatus};
+use crate::model::{GameSummary, League, BaseState, GameStatus, GameOdds};
 use crate::utils::get_mock_data;
 use rand::RngExt;
 use serde_json::Value;
@@ -199,6 +199,50 @@ fn parse_game_date(date: String) -> Result<String, String> {
     ))
 }
 
+fn parse_game_odds(odds: &Value) -> Option<GameOdds> {
+    // Check for existence and type of all required fields
+    // Return None (fail parsing odds) if anything isn't good
+
+    // Moneyline
+    let moneyline_val = &odds["details"];
+    log::debug!("Odds: {:?}", moneyline_val);
+    let moneyline = match moneyline_val.as_str() {
+        Some(s) => s.to_string(),
+        None => {
+            log::warn!("Failed to parse moneyline from odds: {:?}", odds);
+            return None;
+        }
+    };
+
+    // Spread
+    let spread_val = &odds["spread"];
+    log::debug!("Odds: {:?}", spread_val);
+    let spread = match spread_val.as_number() {
+        Some(s) => s.to_string(),
+        None => {
+            log::warn!("Failed to parse spread from odds: {:?}", odds);
+            return None;
+        }
+    };
+
+    // Over/Under
+    let over_under_val = &odds["overUnder"];
+    log::debug!("Odds: {:?}", over_under_val);
+    let over_under = match over_under_val.as_number() {
+        Some(s) => s.to_string(),
+        None => {
+            log::warn!("Failed to parse overUnder from odds: {:?}", odds);
+            return None;
+        }
+    };
+
+    Some(GameOdds {
+        moneyline,
+        spread,
+        over_under,
+    })
+}
+
 fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     let game_id = event["id"].as_str()?.to_string();
     let raw_date = event["date"].as_str()?.to_string();
@@ -209,6 +253,8 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             return None;
         }
     };
+
+    let odds = parse_game_odds(&event["competitions"][0]["odds"][0]);
 
     let competition = &event["competitions"][0];
     let home_team = &competition["competitors"][0];
@@ -249,6 +295,7 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
                 game_id,
                 game_date,
                 league: league.clone(),
+                odds,
                 away_team_abbrev,
                 home_team_abbrev,
                 away_team_score,
@@ -265,6 +312,7 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             game_id,
             game_date,
             league: league.clone(),
+            odds,
             away_team_abbrev,
             home_team_abbrev,
             away_team_score,

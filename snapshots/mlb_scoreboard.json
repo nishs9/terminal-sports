@@ -3,14 +3,15 @@
     "game_id": "401814716",
     "game_date": "03-28 @ 11:15 AM PST",
     "league": "Mlb",
+    "odds": null,
     "away_team_abbrev": "TB",
     "home_team_abbrev": "STL",
     "away_team_score": 0,
     "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
+    "game_status": "InProgress",
+    "status_text": "In Progress",
     "balls": 0,
-    "strikes": 0,
+    "strikes": 2,
     "outs": 0,
     "bases": {
       "on_first": false,
@@ -22,12 +23,13 @@
     "game_id": "401814717",
     "game_date": "03-28 @ 11:20 AM PST",
     "league": "Mlb",
+    "odds": null,
     "away_team_abbrev": "WSH",
     "home_team_abbrev": "CHC",
     "away_team_score": 0,
     "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
+    "game_status": "InProgress",
+    "status_text": "In Progress",
     "balls": 0,
     "strikes": 0,
     "outs": 0,
@@ -41,6 +43,11 @@
     "game_id": "401814707",
     "game_date": "03-28 @ 12:07 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "TOR -199",
+      "spread": "-1.5",
+      "over_under": "8.0"
+    },
     "away_team_abbrev": "ATH",
     "home_team_abbrev": "TOR",
     "away_team_score": 0,
@@ -60,6 +67,11 @@
     "game_id": "401814711",
     "game_date": "03-28 @ 01:05 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "BAL -171",
+      "spread": "-1.5",
+      "over_under": "7.5"
+    },
     "away_team_abbrev": "MIN",
     "home_team_abbrev": "BAL",
     "away_team_score": 0,
@@ -79,6 +91,11 @@
     "game_id": "401814713",
     "game_date": "03-28 @ 01:05 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "PHI -154",
+      "spread": "-1.5",
+      "over_under": "7.5"
+    },
     "away_team_abbrev": "TEX",
     "home_team_abbrev": "PHI",
     "away_team_score": 0,
@@ -98,6 +115,11 @@
     "game_id": "401814708",
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "BOS -136",
+      "spread": "1.5",
+      "over_under": "7.5"
+    },
     "away_team_abbrev": "BOS",
     "home_team_abbrev": "CIN",
     "away_team_score": 0,
@@ -117,6 +139,11 @@
     "game_id": "401814709",
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "MIA -193",
+      "spread": "-1.5",
+      "over_under": "7.5"
+    },
     "away_team_abbrev": "COL",
     "home_team_abbrev": "MIA",
     "away_team_score": 0,
@@ -136,6 +163,11 @@
     "game_id": "401814712",
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "NYM -175",
+      "spread": "-1.5",
+      "over_under": "7.5"
+    },
     "away_team_abbrev": "PIT",
     "home_team_abbrev": "NYM",
     "away_team_score": 0,
@@ -155,6 +187,11 @@
     "game_id": "401814714",
     "game_date": "03-28 @ 04:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "HOU -143",
+      "spread": "-1.5",
+      "over_under": "9.0"
+    },
     "away_team_abbrev": "LAA",
     "home_team_abbrev": "HOU",
     "away_team_score": 0,
@@ -174,6 +211,11 @@
     "game_id": "401814715",
     "game_date": "03-28 @ 04:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "MIL -194",
+      "spread": "-1.5",
+      "over_under": "8.5"
+    },
     "away_team_abbrev": "CHW",
     "home_team_abbrev": "MIL",
     "away_team_score": 0,
@@ -193,6 +235,11 @@
     "game_id": "401814710",
     "game_date": "03-28 @ 04:15 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "ATL -156",
+      "spread": "-1.5",
+      "over_under": "8.5"
+    },
     "away_team_abbrev": "KC",
     "home_team_abbrev": "ATL",
     "away_team_score": 0,
@@ -212,6 +259,11 @@
     "game_id": "401814734",
     "game_date": "03-28 @ 04:15 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "NYY -131",
+      "spread": "1.5",
+      "over_under": "8.5"
+    },
     "away_team_abbrev": "NYY",
     "home_team_abbrev": "SF",
     "away_team_score": 0,
@@ -229,8 +281,13 @@
   },
   {
     "game_id": "401814720",
-    "game_date": "03-29 @ -7:40 AM PST",
+    "game_date": "03-29 @ 05:40 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "SD -110",
+      "spread": "1.5",
+      "over_under": "8.0"
+    },
     "away_team_abbrev": "DET",
     "home_team_abbrev": "SD",
     "away_team_score": 0,
@@ -248,8 +305,13 @@
   },
   {
     "game_id": "401814718",
-    "game_date": "03-29 @ -6:10 AM PST",
+    "game_date": "03-29 @ 06:10 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "LAD -246",
+      "spread": "-1.5",
+      "over_under": "9.0"
+    },
     "away_team_abbrev": "ARI",
     "home_team_abbrev": "LAD",
     "away_team_score": 0,
@@ -267,8 +329,13 @@
   },
   {
     "game_id": "401814719",
-    "game_date": "03-29 @ -6:40 AM PST",
+    "game_date": "03-29 @ 06:40 PM PST",
     "league": "Mlb",
+    "odds": {
+      "moneyline": "SEA -186",
+      "spread": "-1.5",
+      "over_under": "7.0"
+    },
     "away_team_abbrev": "CLE",
     "home_team_abbrev": "SEA",
     "away_team_score": 0,

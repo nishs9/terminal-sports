@@ -29,6 +29,8 @@ pub struct GameSummary {
     pub game_date: String,
     pub league: League,
 
+    pub odds: Option<GameOdds>,
+
     pub away_team_abbrev: String,
     pub home_team_abbrev: String,
 
@@ -43,4 +45,11 @@ pub struct GameSummary {
     pub outs: Option<u64>,
 
     pub bases: Option<BaseState>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct GameOdds {
+    pub moneyline: String,
+    pub spread: String,
+    pub over_under: String,
 }
