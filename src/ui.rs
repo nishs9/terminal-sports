@@ -70,12 +70,16 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
             ListItem::new("WBC")
         ];
 
+        let sidebar_block = Block::default()
+            .title("Leagues")
+            .borders(Borders::ALL);
+
         let sidebar_list = List::new(sidebar_items)
             .highlight_symbol("# ")
             .highlight_style(
                 Style::default()
                     .add_modifier(Modifier::UNDERLINED | Modifier::BOLD),
-            );
+            ).block(sidebar_block);
 
         let mut sidebar_list_state = ListState::default();
         match app_state.league {
@@ -91,12 +95,16 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         .map(|game| ListItem::new(format_game_summary(game)))
         .collect();
 
+        let game_list_block = Block::default()
+            .title("Live Scoreboard")
+            .borders(Borders::ALL);
+
         let game_list = List::new(game_items)
             .highlight_symbol("> ")
             .highlight_style(
                 Style::default()
                     .add_modifier(Modifier::REVERSED | Modifier::BOLD),
-            );
+            ).block(game_list_block);
 
         let mut list_state = ListState::default();
         list_state.select(Some(app_state.selected_game_idx));
@@ -159,6 +167,13 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
         }
         Text::from(lines)
     } else if game.game_status == GameStatus::InProgress {
+        lines.push(Line::from(""));
+        lines.push(Line::from(format!(
+            "{} {:?} @ {} {:?}",
+            game.away_team_abbrev, game.away_team_score.unwrap_or(0),
+            game.home_team_abbrev, game.home_team_score.unwrap_or(0),
+        )));
+        lines.push(Line::from(""));
         match &game.details {
             Some(details) => {
                 lines.push(Line::from(format!(
@@ -201,7 +216,7 @@ fn build_status_line(app_state: &AppState) -> String {
     };
 
     format!(
-        "Current League: {} | {} | ↑/↓ move | r - refresh | l - toggle league (WBC/MLB) | q - quit",
+        "Current League: {} | {} | ↑/↓ move | r - refresh | l - toggle league | q - quit",
         league,
         refresh_status,
     )

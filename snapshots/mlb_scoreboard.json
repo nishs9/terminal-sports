@@ -4,25 +4,15 @@
     "game_date": "03-28 @ 11:15 AM PST",
     "league": "Mlb",
     "odds": null,
-    "details": {
-      "last_play": "Bryan Baker pitches to Nolan Gorman",
-      "pitcher": {
-        "id": "40884",
-        "full_name": "Bryan Baker"
-      },
-      "batter": {
-        "id": "41174",
-        "full_name": "Nolan Gorman"
-      }
-    },
+    "details": null,
     "away_team_abbrev": "TB",
     "home_team_abbrev": "STL",
-    "short_inning": "Bot 9th",
-    "full_inning": "Bottom 9th",
-    "away_team_score": 4,
-    "home_team_score": 4,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
+    "short_inning": "Final/10",
+    "full_inning": "Final/10",
+    "away_team_score": 5,
+    "home_team_score": 6,
+    "game_status": "Final",
+    "status_text": "Final",
     "balls": 0,
     "strikes": 0,
     "outs": 0,
@@ -37,28 +27,18 @@
     "game_date": "03-28 @ 11:20 AM PST",
     "league": "Mlb",
     "odds": null,
-    "details": {
-      "last_play": "Pitch 1 : Strike 1 Foul",
-      "pitcher": {
-        "id": "4414361",
-        "full_name": "Cole Henry"
-      },
-      "batter": {
-        "id": "4717833",
-        "full_name": "Pete Crow-Armstrong"
-      }
-    },
+    "details": null,
     "away_team_abbrev": "WSH",
     "home_team_abbrev": "CHC",
-    "short_inning": "Bot 8th",
-    "full_inning": "Bottom 8th",
+    "short_inning": "Final",
+    "full_inning": "Final",
     "away_team_score": 2,
     "home_team_score": 10,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
+    "game_status": "Final",
+    "status_text": "Final",
     "balls": 0,
-    "strikes": 1,
-    "outs": 1,
+    "strikes": 0,
+    "outs": 0,
     "bases": {
       "on_first": false,
       "on_second": false,
@@ -71,31 +51,31 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Braydon Fisher pitches to Jacob Wilson",
+      "last_play": "Pitch 4 : Ball 3",
       "pitcher": {
-        "id": "41318",
-        "full_name": "Braydon Fisher"
+        "id": "39645",
+        "full_name": "Brendon Little"
       },
       "batter": {
-        "id": "4719300",
-        "full_name": "Jacob Wilson"
+        "id": "4918085",
+        "full_name": "Denzel Clarke"
       }
     },
     "away_team_abbrev": "ATH",
     "home_team_abbrev": "TOR",
-    "short_inning": "Top 6th",
-    "full_inning": "Top 6th",
+    "short_inning": "Top 7th",
+    "full_inning": "Top 7th",
     "away_team_score": 1,
-    "home_team_score": 1,
+    "home_team_score": 2,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
+    "balls": 3,
+    "strikes": 1,
     "outs": 1,
     "bases": {
       "on_first": true,
-      "on_second": false,
-      "on_third": true
+      "on_second": true,
+      "on_third": false
     }
   },
   {
@@ -104,31 +84,31 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 2 : Strike 2 Looking",
+      "last_play": "Pitch 4 : Strike 2 Foul",
       "pitcher": {
-        "id": "42480",
-        "full_name": "Taj Bradley"
+        "id": "4311625",
+        "full_name": "Kyle Bradish"
       },
       "batter": {
-        "id": "4416990",
-        "full_name": "Colton Cowser"
+        "id": "32517",
+        "full_name": "Josh Bell"
       }
     },
     "away_team_abbrev": "MIN",
     "home_team_abbrev": "BAL",
-    "short_inning": "Bot 2nd",
-    "full_inning": "Bottom 2nd",
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
     "away_team_score": 0,
-    "home_team_score": 0,
+    "home_team_score": 1,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
+    "balls": 2,
     "strikes": 2,
     "outs": 1,
     "bases": {
-      "on_first": false,
+      "on_first": true,
       "on_second": false,
-      "on_third": false
+      "on_third": true
     }
   },
   {
@@ -137,26 +117,26 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 1 : Ball 1",
+      "last_play": "Pitch 4 : Ball 2",
       "pitcher": {
-        "id": "3210625",
-        "full_name": "Jacob Latz"
+        "id": "33709",
+        "full_name": "Aaron Nola"
       },
       "batter": {
-        "id": "35537",
-        "full_name": "Adolis Garcia"
+        "id": "4917921",
+        "full_name": "Evan Carter"
       }
     },
     "away_team_abbrev": "TEX",
     "home_team_abbrev": "PHI",
-    "short_inning": "Bot 2nd",
-    "full_inning": "Bottom 2nd",
-    "away_team_score": 1,
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
+    "away_team_score": 3,
     "home_team_score": 0,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 1,
-    "strikes": 0,
+    "balls": 2,
+    "strikes": 2,
     "outs": 2,
     "bases": {
       "on_first": false,
@@ -170,29 +150,29 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Brady Singer pitches to Marcelo Mayer",
+      "last_play": "Pitch 2 : Ball 1",
       "pitcher": {
-        "id": "41172",
-        "full_name": "Brady Singer"
+        "id": "32082",
+        "full_name": "Sonny Gray"
       },
       "batter": {
-        "id": "4872648",
-        "full_name": "Marcelo Mayer"
+        "id": "39216",
+        "full_name": "Will Benson"
       }
     },
     "away_team_abbrev": "BOS",
     "home_team_abbrev": "CIN",
-    "short_inning": "Top 2nd",
-    "full_inning": "Top 2nd",
-    "away_team_score": 0,
-    "home_team_score": 2,
+    "short_inning": "Bot 3rd",
+    "full_inning": "Bottom 3rd",
+    "away_team_score": 1,
+    "home_team_score": 4,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
+    "balls": 1,
+    "strikes": 1,
     "outs": 1,
     "bases": {
-      "on_first": false,
+      "on_first": true,
       "on_second": false,
       "on_third": false
     }
@@ -203,26 +183,26 @@
     "league": "Mlb",
     "odds": null,
     "details": {
-      "last_play": "Pitch 1 : Strike 1 Foul",
+      "last_play": "Pitch 5 : Ball 2",
       "pitcher": {
-        "id": "33252",
-        "full_name": "Michael Lorenzen"
+        "id": "4917854",
+        "full_name": "Eury Perez"
       },
       "batter": {
-        "id": "4725251",
-        "full_name": "Liam Hicks"
+        "id": "34230",
+        "full_name": "Willi Castro"
       }
     },
     "away_team_abbrev": "COL",
     "home_team_abbrev": "MIA",
-    "short_inning": "Bot 2nd",
-    "full_inning": "Bottom 2nd",
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
     "away_team_score": 1,
-    "home_team_score": 0,
+    "home_team_score": 1,
     "game_status": "InProgress",
     "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 1,
+    "balls": 2,
+    "strikes": 2,
     "outs": 0,
     "bases": {
       "on_first": false,
@@ -235,30 +215,20 @@
     "game_date": "03-28 @ 01:10 PM PST",
     "league": "Mlb",
     "odds": null,
-    "details": {
-      "last_play": "Pitch 1 : Strike 1 Foul",
-      "pitcher": {
-        "id": "40921",
-        "full_name": "David Peterson"
-      },
-      "batter": {
-        "id": "42664",
-        "full_name": "Jake Mangum"
-      }
-    },
+    "details": null,
     "away_team_abbrev": "PIT",
     "home_team_abbrev": "NYM",
-    "short_inning": "Top 3rd",
-    "full_inning": "Top 3rd",
+    "short_inning": "End 4th",
+    "full_inning": "End 4th",
     "away_team_score": 0,
     "home_team_score": 0,
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 0,
-    "strikes": 1,
-    "outs": 1,
+    "strikes": 0,
+    "outs": 0,
     "bases": {
-      "on_first": true,
+      "on_first": false,
       "on_second": false,
       "on_third": false
     }
@@ -295,7 +265,7 @@
     "game_date": "03-28 @ 04:10 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "MIL -194",
+      "moneyline": "MIL -199",
       "spread": "-1.5",
       "over_under": "8.0"
     },
@@ -403,7 +373,7 @@
     "game_date": "03-29 @ 06:10 PM PST",
     "league": "Mlb",
     "odds": {
-      "moneyline": "LAD -252",
+      "moneyline": "LAD -246",
       "spread": "-1.5",
       "over_under": "9.0"
     },
