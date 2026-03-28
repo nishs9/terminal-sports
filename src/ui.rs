@@ -101,15 +101,33 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         let mut list_state = ListState::default();
         list_state.select(Some(app_state.selected_game_idx));
 
+        let selected_game = &app_state.games[app_state.selected_game_idx];
+
         let game_details_box = Block::default()
             .title("Game Details")
             .borders(Borders::ALL);
 
-        let selected_game = &app_state.games[app_state.selected_game_idx];
-        let _game_details = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
-
+        if selected_game.game_status == GameStatus::InProgress {
+            let mut base_lines = vec![Line::from("")];
+            generate_and_set_base_string(&selected_game.bases, &mut base_lines);
+            let bases_paragraph = Paragraph::new(Text::from(base_lines));
+            let info_paragraph = Paragraph::new(format_game_details(selected_game));
+            let details_inner = game_details_box.inner(list_game_details);
+            let details_split = Layout::default()
+                .direction(Direction::Horizontal)
+                .constraints([
+                    Constraint::Length(18),
+                    Constraint::Min(0),
+                ])
+                .split(details_inner);
+            frame.render_widget(game_details_box, list_game_details);
+            frame.render_widget(bases_paragraph, details_split[0]);
+            frame.render_widget(info_paragraph, details_split[1]);
+        } else {
+            let info_paragraph = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
+            frame.render_widget(info_paragraph, list_game_details);
+        }
         frame.render_stateful_widget(game_list, list_main, &mut list_state);
-        frame.render_widget(_game_details, list_game_details);
     }
 
     let status_bar_text = build_status_line(app_state);

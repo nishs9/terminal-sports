@@ -221,7 +221,17 @@ fn parse_game_odds(odds: &Value) -> Option<GameOdds> {
     let spread_val = &odds["spread"];
     log::debug!("Odds: {:?}", spread_val);
     let spread = match spread_val.as_number() {
-        Some(s) => s.to_string(),
+        Some(s) => {
+            // The API returns the spread from the perspective of the home team, we
+            // always display it from the perspective of the favorite so we need to 
+            // ensure the value is negative
+            let spread = s.as_f64().unwrap_or(0.0).abs() * -1.0;
+            if spread == 0.0 {
+                "EVEN".to_string()
+            } else {
+                format!("{:.1}", spread)
+            }
+        },
         None => {
             log::warn!("Failed to parse spread from odds: {:?}", odds);
             return None;
