@@ -101,7 +101,15 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         let mut list_state = ListState::default();
         list_state.select(Some(app_state.selected_game_idx));
 
+        let game_details_box = Block::default()
+            .title("Game Details")
+            .borders(Borders::ALL);
+
+        let selected_game = &app_state.games[app_state.selected_game_idx];
+        let _game_details = Paragraph::new(format_game_summary(selected_game)).block(game_details_box);
+
         frame.render_stateful_widget(game_list, list_main, &mut list_state);
+        frame.render_widget(_game_details, list_game_details);
     }
 
     let status_bar_text = build_status_line(app_state);

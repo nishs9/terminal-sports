@@ -14,9 +14,9 @@ pub struct AppState {
 }
 
 impl AppState {
-    pub fn new(games: Vec<GameSummary>) -> Self {
+    pub fn new(league: League, games: Vec<GameSummary>) -> Self {
         Self {
-            league: League::Wbc,
+            league,
             games,
             selected_game_idx: 0,
             last_refresh: None,

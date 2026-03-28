@@ -15,7 +15,7 @@ pub fn run_app<B: Backend>(
 ) -> Result<(), io::Error> {
     let mut client = api::ApiClient::new("snapshots");
     let init_games = client.fetch_games(&League::Mlb).unwrap_or_default();
-    let mut app_state = AppState::new(init_games);
+    let mut app_state = AppState::new(League::Mlb, init_games);
     loop {
         terminal.draw(|frame| draw_tui(frame, &app_state))?;
 
