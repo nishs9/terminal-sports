@@ -1,121 +1,13 @@
 [
   {
-    "game_id": "401838793",
+    "game_id": "401845801",
     "league": "Wbc",
-    "away_team_abbrev": "AUS",
-    "home_team_abbrev": "JPN",
+    "away_team_abbrev": "VEN",
+    "home_team_abbrev": "USA",
     "away_team_score": 3,
-    "home_team_score": 4,
+    "home_team_score": 2,
     "game_status": "Final",
     "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838788",
-    "league": "Wbc",
-    "away_team_abbrev": "COL",
-    "home_team_abbrev": "CUB",
-    "away_team_score": 4,
-    "home_team_score": 7,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838794",
-    "league": "Wbc",
-    "away_team_abbrev": "NED",
-    "home_team_abbrev": "DOM",
-    "away_team_score": 1,
-    "home_team_score": 12,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838790",
-    "league": "Wbc",
-    "away_team_abbrev": "GBR",
-    "home_team_abbrev": "ITA",
-    "away_team_score": 4,
-    "home_team_score": 7,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838789",
-    "league": "Wbc",
-    "away_team_abbrev": "PAN",
-    "home_team_abbrev": "CAN",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838795",
-    "league": "Wbc",
-    "away_team_abbrev": "NCA",
-    "home_team_abbrev": "ISR",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401838791",
-    "league": "Wbc",
-    "away_team_abbrev": "BRA",
-    "home_team_abbrev": "MEX",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
     "balls": 0,
     "strikes": 0,
     "outs": 0,

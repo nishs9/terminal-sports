@@ -2,8 +2,8 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub enum League {
-    Wbc,
     Mlb,
+    Wbc,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -26,6 +26,7 @@ pub struct BaseState {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct GameSummary {
     pub game_id: String,
+    pub game_date: String,
     pub league: League,
 
     pub away_team_abbrev: String,

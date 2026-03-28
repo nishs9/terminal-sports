@@ -6,6 +6,8 @@ use std::{
     fs,
     path::PathBuf
 };
+use regex::Regex;
+use std::sync::LazyLock;
 
 pub struct ApiClient {
     req_counter: u64,
@@ -162,8 +164,51 @@ fn create_game_summaries(root: &Value, league: &League) -> Result<Vec<GameSummar
     Ok(games)
 }
 
+static GAME_DATE_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r"^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?(Z|[+-]\d{2}:?\d{2})$",
+    )
+    .expect("GAME_DATE_RE")
+});
+
+/// Parse + format the game date from the ESPN API
+fn parse_game_date(date: String) -> Result<String, String> {
+    log::debug!("Parsing game date: {}", date);
+    let caps = GAME_DATE_RE
+        .captures(&date)
+        .ok_or_else(|| format!("unrecognized date format: {date}"))?;
+
+    let m = caps[2].parse::<i32>().map_err(|e| e.to_string())?;
+    let d = caps[3].parse::<i32>().map_err(|e| e.to_string())?;
+    let mut hour24 = caps[4].parse::<i32>().map_err(|e| e.to_string())?;
+    // temporary hack: adjusting UTC -> PST local time
+    hour24 -= 7;
+    if hour24 < 0 {
+        hour24 += 24;
+    }
+    let minute = caps[5].parse::<i32>().map_err(|e| e.to_string())?;
+
+    let (hour12, am_pm) = if hour24 % 12 == 0 {
+        (12i32, if hour24 < 12 { "AM" } else { "PM" })
+    } else {
+        (hour24 % 12, if hour24 < 12 { "AM" } else { "PM" })
+    };
+
+    Ok(format!(
+        "{m:02}-{d:02} @ {hour12:02}:{minute:02} {am_pm} PST"
+    ))
+}
+
 fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     let game_id = event["id"].as_str()?.to_string();
+    let raw_date = event["date"].as_str()?.to_string();
+    let game_date = match parse_game_date(raw_date) {
+        Ok(date) => date,
+        Err(err) => {
+            log::error!("Failed to parse game date: {}", err);
+            return None;
+        }
+    };
 
     let competition = &event["competitions"][0];
     let home_team = &competition["competitors"][0];
@@ -202,6 +247,7 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             };
             Some(GameSummary {
                 game_id,
+                game_date,
                 league: league.clone(),
                 away_team_abbrev,
                 home_team_abbrev,
@@ -217,6 +263,7 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
         },
         _ => Some(GameSummary {
             game_id,
+            game_date,
             league: league.clone(),
             away_team_abbrev,
             home_team_abbrev,

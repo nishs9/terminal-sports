@@ -19,7 +19,7 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let area = frame.size();
 
     let outer = Block::default()
-        .title("Live Baseball Scoreboard TUI")
+        .title("Terminal Sports")
         .borders(Borders::ALL);
 
     frame.render_widget(outer, area);
@@ -52,11 +52,13 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         .direction(Direction::Horizontal)
         .constraints([
             Constraint::Percentage(10),
-            Constraint::Percentage(90),
+            Constraint::Percentage(40),
+            Constraint::Percentage(50),
         ])
         .split(list_rect);
     let list_sidebar = list_chunks[0];
     let list_main = list_chunks[1];
+    let list_game_details = list_chunks[2];
 
     if app_state.games.is_empty() {
         let empty = Paragraph::new("No games found");
@@ -64,8 +66,8 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
         return;
     } else {
         let sidebar_items: Vec<ListItem> = vec![
-            ListItem::new("WBC"),
             ListItem::new("MLB"),
+            ListItem::new("WBC")
         ];
 
         let sidebar_list = List::new(sidebar_items)
@@ -77,8 +79,8 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
 
         let mut sidebar_list_state = ListState::default();
         match app_state.league {
-            League::Wbc => sidebar_list_state.select(Some(0)),
-            League::Mlb => sidebar_list_state.select(Some(1)),
+            League::Mlb => sidebar_list_state.select(Some(0)),
+            League::Wbc => sidebar_list_state.select(Some(1)),
         }
 
         frame.render_stateful_widget(sidebar_list, list_sidebar, &mut sidebar_list_state);
@@ -171,10 +173,11 @@ fn format_game_summary(game: &GameSummary) -> Text<'static> {
         }
         GameStatus::Scheduled => {
             lines.push(Line::from(format!(
-                "{} @ {} | {} | Scheduled",
+                "{} @ {} | {} | {}",
                 game.away_team_abbrev, 
                 game.home_team_abbrev,
                 game.status_text,
+                game.game_date,
             )));
 
             generate_and_set_base_string(&game.bases, &mut lines);

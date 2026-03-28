@@ -6,6 +6,7 @@ pub fn get_mock_data() -> Vec<GameSummary> {
     vec![
         GameSummary {
             game_id: "1".to_string(),
+            game_date: "2026-03-28T18:15Z".to_string(),
             league: League::Wbc,
             away_team_abbrev: "PAN".to_string(),
             home_team_abbrev: "PUR".to_string(),
@@ -24,6 +25,7 @@ pub fn get_mock_data() -> Vec<GameSummary> {
         },
         GameSummary {
             game_id: "2".to_string(),
+            game_date: "2026-03-28T18:15Z".to_string(),
             league: League::Wbc,
             away_team_abbrev: "COL".to_string(),
             home_team_abbrev: "CAN".to_string(),
@@ -38,6 +40,7 @@ pub fn get_mock_data() -> Vec<GameSummary> {
         },
         GameSummary {
             game_id: "3".to_string(),
+            game_date: "2026-03-28T18:15Z".to_string(),
             league: League::Wbc,
             away_team_abbrev: "TPE".to_string(),
             home_team_abbrev: "KOR".to_string(),
