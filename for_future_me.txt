@@ -1,0 +1,7 @@
+In case you come back to this project branch here are some details to get you caught up:
+
+
+You were trying to improve the base graphics representation by using Ratatui's Canvas feature
+to actually draw the physical shapes to represent the bases, count, and outs
+
+That's all I got chief

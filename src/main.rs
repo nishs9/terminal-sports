@@ -1,6 +1,7 @@
 mod api;
 mod model;
 mod state;
+mod situation_canvas;
 mod ui;
 mod app;
 mod logger;

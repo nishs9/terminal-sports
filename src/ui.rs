@@ -1,4 +1,5 @@
 use crate::state::AppState;
+use crate::situation_canvas::situation_canvas;
 use crate::model::BaseState;
 use ratatui::{
     prelude::{
@@ -10,7 +11,7 @@ use ratatui::{
     widgets::{
         Block, Borders,
         List, ListItem,
-        ListState, Paragraph
+        ListState, Paragraph, Wrap,
     }
 };
 use crate::model::{League, GameSummary, GameStatus};
@@ -108,23 +109,24 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
             .borders(Borders::ALL);
 
         if selected_game.game_status == GameStatus::InProgress {
-            let mut base_lines = vec![Line::from("")];
-            generate_and_set_base_string(&selected_game.bases, &mut base_lines);
-            let bases_paragraph = Paragraph::new(Text::from(base_lines));
-            let info_paragraph = Paragraph::new(format_game_details(selected_game));
+            let situation = situation_canvas(selected_game);
+            let info_paragraph = Paragraph::new(format_game_details(selected_game))
+                .wrap(Wrap { trim: true });
             let details_inner = game_details_box.inner(list_game_details);
             let details_split = Layout::default()
                 .direction(Direction::Horizontal)
                 .constraints([
-                    Constraint::Length(18),
+                    Constraint::Length(36),
                     Constraint::Min(0),
                 ])
                 .split(details_inner);
             frame.render_widget(game_details_box, list_game_details);
-            frame.render_widget(bases_paragraph, details_split[0]);
+            frame.render_widget(situation, details_split[0]);
             frame.render_widget(info_paragraph, details_split[1]);
         } else {
-            let info_paragraph = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
+            let info_paragraph = Paragraph::new(format_game_details(selected_game))
+                .wrap(Wrap { trim: true })
+                .block(game_details_box);
             frame.render_widget(info_paragraph, list_game_details);
         }
         frame.render_stateful_widget(game_list, list_main, &mut list_state);
