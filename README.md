@@ -26,7 +26,6 @@ You will obviously need to install Rust in order to work with this project. I wi
 Once you have Rust, setup the project as you normally would:
 
 ```
-cargo install
 cargo build
 cargo run
 ```
