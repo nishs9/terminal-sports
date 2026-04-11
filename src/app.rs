@@ -10,6 +10,8 @@ use crate::api;
 use std::io;
 use std::time::Duration;
 
+const AUTO_REFRESH_INTERVAL: u64 = 60;
+
 pub fn run_app<B: Backend>(
     terminal: &mut Terminal<B>
 ) -> Result<(), io::Error> {
@@ -27,7 +29,16 @@ pub fn run_app<B: Backend>(
             && let Event::Key(key) = event::read()? {
             match key.code {
                 KeyCode::Char('q') => break,
-                KeyCode::Char('r') => refresh_games(&mut app_state, &mut client),
+                KeyCode::Char('r') => {
+                    // Prevents a user from spamming the manual refresh
+                    let time_since_refresh = match app_state.last_refresh {
+                        Some(last_refresh) => last_refresh.elapsed(),
+                        None => Duration::from_secs(0),
+                    };
+                    if time_since_refresh > Duration::from_secs(10) {
+                        refresh_games(&mut app_state, &mut client);
+                    }
+                }
                 KeyCode::Char('l') => app_state.toggle_league(),
                 KeyCode::Up => app_state.move_up(),
                 KeyCode::Down => app_state.move_down(),
@@ -61,7 +72,7 @@ fn should_auto_refresh(app_state: &mut AppState) -> bool {
 
     match app_state.last_refresh {
         Some(last_refresh) => 
-            last_refresh.elapsed() >= Duration::from_secs(10),
+            last_refresh.elapsed() >= Duration::from_secs(AUTO_REFRESH_INTERVAL),
         None => true,
     }
 }

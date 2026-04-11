@@ -426,6 +426,9 @@ fn test_create_game_summaries() {
     }
 }
 
+#[test]
+fn test_snapshot_logic() {}
+
 fn _load_expected_game_summaries() -> Vec<GameSummary> {
     // create a vector of expected game summaries from the expected_game_summary.json file
     let expected_game_summary = match fs::read_to_string("resources/expected_game_summary.json") {
