@@ -71,7 +71,7 @@ impl ApiClient {
             }
     }
 
-    fn save_snapshot(&mut self, league: &League, games: &[GameSummary]) -> Result<(), String> {
+    fn save_snapshot(&self, league: &League, games: &[GameSummary]) -> Result<(), String> {
         fs::create_dir_all(&self.snapshot_dir)
             .map_err(|err| format!("Failed to create snapshot directory: {}", err))?;
 
@@ -290,12 +290,24 @@ fn parse_game_details(details: &Value) -> Option<GameDetails> {
 }
 
 fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
-    let game_id = event["id"].as_str()?.to_string();
-    let raw_date = event["date"].as_str()?.to_string();
+    let game_id = match event["id"].as_str() {
+        Some(id) => id.to_string(),
+        None => {
+            log::error!("Failed to parse game id from JSON");
+            return None;
+        }
+    };
+    let raw_date = match event["date"].as_str() {
+        Some(date) => date.to_string(),
+        None => {
+            log::error!("Failed to parse game date from JSON");
+            return None;
+        }
+    };
     let game_date = match parse_game_date(raw_date) {
         Ok(date) => date,
         Err(err) => {
-            log::error!("Failed to parse game date: {}", err);
+            log::error!("Failed to parse game date from JSON: {}", err);
             return None;
         }
     };
@@ -427,7 +439,15 @@ fn test_create_game_summaries() {
 }
 
 #[test]
-fn test_snapshot_logic() {}
+fn test_snapshot_logic() {
+    let test_api_client = ApiClient::new("tests/snapshots");
+    let mock_game_summaries = _load_expected_game_summaries();
+    let result = test_api_client.save_snapshot(&League::Mlb, &mock_game_summaries);
+    assert!(result.is_ok());
+    let loaded_game_summaries = test_api_client.load_snapshot(&League::Mlb);
+    assert!(loaded_game_summaries.is_ok());
+    assert_eq!(loaded_game_summaries.unwrap(), mock_game_summaries);
+}
 
 fn _load_expected_game_summaries() -> Vec<GameSummary> {
     // create a vector of expected game summaries from the expected_game_summary.json file
