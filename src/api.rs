@@ -71,7 +71,7 @@ impl ApiClient {
             }
     }
 
-    fn save_snapshot(&mut self, league: &League, games: &[GameSummary]) -> Result<(), String> {
+    fn save_snapshot(&self, league: &League, games: &[GameSummary]) -> Result<(), String> {
         fs::create_dir_all(&self.snapshot_dir)
             .map_err(|err| format!("Failed to create snapshot directory: {}", err))?;
 
@@ -128,6 +128,7 @@ fn get_game_status(game_status: &str) -> GameStatus {
         _ => panic!("Invalid game status: {}", game_status),
     }
 }
+
 fn get_league_url(league: &League) -> &'static str {
     match league {
         League::Wbc => "https://site.api.espn.com/apis/site/v2/sports/baseball/world-baseball-classic/scoreboard",
@@ -225,7 +226,7 @@ fn parse_game_odds(odds: &Value) -> Option<GameOdds> {
             // The API returns the spread from the perspective of the home team, we
             // always display it from the perspective of the favorite so we need to 
             // ensure the value is negative
-            let spread = s.as_f64().unwrap_or(0.0).abs() * -1.0;
+            let spread = -s.as_f64().unwrap_or(0.0).abs();
             if spread == 0.0 {
                 "EVEN".to_string()
             } else {
@@ -289,12 +290,24 @@ fn parse_game_details(details: &Value) -> Option<GameDetails> {
 }
 
 fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
-    let game_id = event["id"].as_str()?.to_string();
-    let raw_date = event["date"].as_str()?.to_string();
+    let game_id = match event["id"].as_str() {
+        Some(id) => id.to_string(),
+        None => {
+            log::error!("Failed to parse game id from JSON");
+            return None;
+        }
+    };
+    let raw_date = match event["date"].as_str() {
+        Some(date) => date.to_string(),
+        None => {
+            log::error!("Failed to parse game date from JSON");
+            return None;
+        }
+    };
     let game_date = match parse_game_date(raw_date) {
         Ok(date) => date,
         Err(err) => {
-            log::error!("Failed to parse game date: {}", err);
+            log::error!("Failed to parse game date from JSON: {}", err);
             return None;
         }
     };
@@ -394,4 +407,57 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     };
     log::debug!("Parsed game summary: {:?}", game_summary);
     game_summary
+}
+
+#[cfg(test)]
+
+#[test]
+fn test_create_game_summaries() {
+    // Arrange 
+    let raw_json = match fs::read_to_string("resources/sample_mlb_api_response.json") {
+        Ok(json) => json,
+        Err(err) => panic!("Failed to read sample JSON: {}", err),
+    };
+
+    let root: Value = match serde_json::from_str(&raw_json) {
+        Ok(root) => root,
+        Err(err) => panic!("Failed to parse sample JSON: {}", err),
+    };
+
+    // Act
+    let game_summaries = match create_game_summaries(&root, &League::Mlb) {
+        Ok(game_summaries) => game_summaries,
+        Err(err) => panic!("Failed to create game summaries: {}", err),
+    };
+    
+    // Assert
+    let expected_game_summaries = _load_expected_game_summaries();
+    assert_eq!(game_summaries.len(), expected_game_summaries.len());
+    for (i, game_summary) in game_summaries.iter().enumerate() {
+        assert_eq!(game_summary, &expected_game_summaries[i]);
+    }
+}
+
+#[test]
+fn test_snapshot_logic() {
+    let test_api_client = ApiClient::new("tests/snapshots");
+    let mock_game_summaries = _load_expected_game_summaries();
+    let result = test_api_client.save_snapshot(&League::Mlb, &mock_game_summaries);
+    assert!(result.is_ok());
+    let loaded_game_summaries = test_api_client.load_snapshot(&League::Mlb);
+    assert!(loaded_game_summaries.is_ok());
+    assert_eq!(loaded_game_summaries.unwrap(), mock_game_summaries);
+}
+
+fn _load_expected_game_summaries() -> Vec<GameSummary> {
+    // create a vector of expected game summaries from the expected_game_summary.json file
+    let expected_game_summary = match fs::read_to_string("resources/expected_game_summary.json") {
+        Ok(json) => json,
+        Err(err) => panic!("Failed to read expected game summary: {}", err),
+    };
+    let expected_game_summaries: Vec<GameSummary> = match serde_json::from_str(&expected_game_summary) {
+        Ok(game_summaries) => game_summaries,
+        Err(err) => panic!("Failed to parse expected game summary: {}", err),
+    };
+    expected_game_summaries
 }

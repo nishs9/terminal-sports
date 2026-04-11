@@ -16,14 +16,14 @@ pub enum GameStatus {
     // Delayed,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct BaseState {
     pub on_first: bool,
     pub on_second: bool,
     pub on_third: bool,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct GameSummary {
     pub game_id: String,
     pub game_date: String,
@@ -51,21 +51,21 @@ pub struct GameSummary {
     pub bases: Option<BaseState>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct GameOdds {
     pub moneyline: String,
     pub spread: String,
     pub over_under: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct GameDetails {
     pub last_play: String,
     pub pitcher: Player,
     pub batter: Player,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct Player {
     pub id: String,
     pub full_name: String

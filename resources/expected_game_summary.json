@@ -1,0 +1,435 @@
+[
+  {
+    "game_id": "401814716",
+    "game_date": "03-28 @ 11:15 AM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "TB",
+    "home_team_abbrev": "STL",
+    "short_inning": "Final/10",
+    "full_inning": "Final/10",
+    "away_team_score": 5,
+    "home_team_score": 6,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814717",
+    "game_date": "03-28 @ 11:20 AM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "WSH",
+    "home_team_abbrev": "CHC",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 2,
+    "home_team_score": 10,
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814707",
+    "game_date": "03-28 @ 12:07 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Tommy Nance pitches to Brent Rooker",
+      "pitcher": {
+        "id": "36385",
+        "full_name": "Tommy Nance"
+      },
+      "batter": {
+        "id": "40926",
+        "full_name": "Brent Rooker"
+      }
+    },
+    "away_team_abbrev": "ATH",
+    "home_team_abbrev": "TOR",
+    "short_inning": "Top 7th",
+    "full_inning": "Top 7th",
+    "away_team_score": 6,
+    "home_team_score": 2,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 2,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814711",
+    "game_date": "03-28 @ 01:05 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Pitch 4 : Strike 2 Looking",
+      "pitcher": {
+        "id": "42480",
+        "full_name": "Taj Bradley"
+      },
+      "batter": {
+        "id": "4683371",
+        "full_name": "Coby Mayo"
+      }
+    },
+    "away_team_abbrev": "MIN",
+    "home_team_abbrev": "BAL",
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
+    "away_team_score": 1,
+    "home_team_score": 1,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 2,
+    "strikes": 2,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814713",
+    "game_date": "03-28 @ 01:05 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Harper grounded out to second.",
+      "pitcher": {
+        "id": "3210625",
+        "full_name": "Jacob Latz"
+      },
+      "batter": {
+        "id": "30951",
+        "full_name": "Bryce Harper"
+      }
+    },
+    "away_team_abbrev": "TEX",
+    "home_team_abbrev": "PHI",
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
+    "away_team_score": 3,
+    "home_team_score": 0,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 2,
+    "outs": 2,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814708",
+    "game_date": "03-28 @ 01:10 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Rafaela singled to center, Narváez to second.",
+      "pitcher": {
+        "id": "41172",
+        "full_name": "Brady Singer"
+      },
+      "batter": {
+        "id": "4987382",
+        "full_name": "Ceddanne Rafaela"
+      }
+    },
+    "away_team_abbrev": "BOS",
+    "home_team_abbrev": "CIN",
+    "short_inning": "Top 4th",
+    "full_inning": "Top 4th",
+    "away_team_score": 1,
+    "home_team_score": 4,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 2,
+    "outs": 2,
+    "bases": {
+      "on_first": true,
+      "on_second": true,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814709",
+    "game_date": "03-28 @ 01:10 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Michael Lorenzen pitches to Graham Pauley",
+      "pitcher": {
+        "id": "33252",
+        "full_name": "Michael Lorenzen"
+      },
+      "batter": {
+        "id": "4622931",
+        "full_name": "Graham Pauley"
+      }
+    },
+    "away_team_abbrev": "COL",
+    "home_team_abbrev": "MIA",
+    "short_inning": "Bot 4th",
+    "full_inning": "Bottom 4th",
+    "away_team_score": 3,
+    "home_team_score": 1,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 2,
+    "bases": {
+      "on_first": true,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814712",
+    "game_date": "03-28 @ 01:10 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "David Peterson pitches to Marcell Ozuna",
+      "pitcher": {
+        "id": "40921",
+        "full_name": "David Peterson"
+      },
+      "batter": {
+        "id": "31668",
+        "full_name": "Marcell Ozuna"
+      }
+    },
+    "away_team_abbrev": "PIT",
+    "home_team_abbrev": "NYM",
+    "short_inning": "Top 5th",
+    "full_inning": "Top 5th",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 2,
+    "bases": {
+      "on_first": true,
+      "on_second": true,
+      "on_third": true
+    }
+  },
+  {
+    "game_id": "401814714",
+    "game_date": "03-28 @ 04:10 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "HOU -136",
+      "spread": "-1.5",
+      "over_under": "9.0"
+    },
+    "details": null,
+    "away_team_abbrev": "LAA",
+    "home_team_abbrev": "HOU",
+    "short_inning": "3/28 - 7:10 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814715",
+    "game_date": "03-28 @ 04:10 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "MIL -199",
+      "spread": "-1.5",
+      "over_under": "8.0"
+    },
+    "details": null,
+    "away_team_abbrev": "CHW",
+    "home_team_abbrev": "MIL",
+    "short_inning": "3/28 - 7:10 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814710",
+    "game_date": "03-28 @ 04:15 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "ATL -156",
+      "spread": "-1.5",
+      "over_under": "8.5"
+    },
+    "details": null,
+    "away_team_abbrev": "KC",
+    "home_team_abbrev": "ATL",
+    "short_inning": "3/28 - 7:15 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814734",
+    "game_date": "03-28 @ 04:15 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "NYY -131",
+      "spread": "-1.5",
+      "over_under": "8.5"
+    },
+    "details": null,
+    "away_team_abbrev": "NYY",
+    "home_team_abbrev": "SF",
+    "short_inning": "3/28 - 7:15 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814720",
+    "game_date": "03-29 @ 05:40 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "SD -110",
+      "spread": "-1.5",
+      "over_under": "8.0"
+    },
+    "details": null,
+    "away_team_abbrev": "DET",
+    "home_team_abbrev": "SD",
+    "short_inning": "3/28 - 8:40 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814718",
+    "game_date": "03-29 @ 06:10 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "LAD -246",
+      "spread": "-1.5",
+      "over_under": "9.0"
+    },
+    "details": null,
+    "away_team_abbrev": "ARI",
+    "home_team_abbrev": "LAD",
+    "short_inning": "3/28 - 9:10 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  },
+  {
+    "game_id": "401814719",
+    "game_date": "03-29 @ 06:40 PM PST",
+    "league": "Mlb",
+    "odds": {
+      "moneyline": "SEA -194",
+      "spread": "-1.5",
+      "over_under": "7.0"
+    },
+    "details": null,
+    "away_team_abbrev": "CLE",
+    "home_team_abbrev": "SEA",
+    "short_inning": "3/28 - 9:40 PM EDT",
+    "full_inning": "Scheduled",
+    "away_team_score": 0,
+    "home_team_score": 0,
+    "game_status": "Scheduled",
+    "status_text": "Scheduled",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    }
+  }
+]
