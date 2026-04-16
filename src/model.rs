@@ -41,6 +41,9 @@ pub struct GameSummary {
     pub away_team_score: Option<u64>,
     pub home_team_score: Option<u64>,
 
+    pub home_linescore: Vec<u64>,
+    pub away_linescore: Vec<u64>,
+
     pub game_status: GameStatus,
     pub status_text: String,
 
@@ -49,6 +52,9 @@ pub struct GameSummary {
     pub outs: Option<u64>,
 
     pub bases: Option<BaseState>,
+
+    pub winning_pitcher: Option<String>,
+    pub losing_pitcher: Option<String>
 }
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
