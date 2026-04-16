@@ -8,8 +8,8 @@ use ratatui::{
         Style, Modifier
     },
     widgets::{
-        Block, Borders,
-        List, ListItem,
+        Block, Borders, Row,
+        List, ListItem, Table,
         ListState, Paragraph
     }
 };
@@ -123,6 +123,8 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
                     selected_game.outs.unwrap_or(0), &mut base_lines);
             let bases_paragraph = Paragraph::new(Text::from(base_lines));
             let info_paragraph = Paragraph::new(format_game_details(selected_game));
+            let linescore_table = generate_linescore_table(selected_game);
+
             let details_inner = game_details_box.inner(list_game_details);
             let details_split = Layout::default()
                 .direction(Direction::Horizontal)
@@ -131,9 +133,17 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
                     Constraint::Min(0),
                 ])
                 .split(details_inner);
+            let main_details = Layout::default()
+                    .direction(Direction::Vertical)
+                    .constraints([
+                        Constraint::Percentage(20),
+                        Constraint::Length(5),
+                    ])
+                    .split(details_split[1]);
             frame.render_widget(game_details_box, list_game_details);
             frame.render_widget(bases_paragraph, details_split[0]);
-            frame.render_widget(info_paragraph, details_split[1]);
+            frame.render_widget(info_paragraph, main_details[0]);
+            frame.render_widget(linescore_table, main_details[1]);
         } else {
             let info_paragraph = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
             frame.render_widget(info_paragraph, list_game_details);
@@ -144,6 +154,41 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
     let status_bar_text = build_status_line(app_state);
     let status = Paragraph::new(status_bar_text);
     frame.render_widget(status, status_area);
+}
+
+fn generate_linescore_table(game: &GameSummary) -> Table<'static> {
+    let widths = vec![
+        Constraint::Percentage(19),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+        Constraint::Percentage(9),
+    ];
+    let header = Row::new(vec!["Team", "1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+    let home_row = make_team_row(&game.home_team_abbrev, &game.home_linescore);
+    let away_row = make_team_row(&game.away_team_abbrev, &game.away_linescore);
+    let table = Table::new(vec![header, away_row, home_row], widths);
+    table.block(Block::default().title("Linescore").borders(Borders::ALL))
+}
+
+fn make_team_row(team_abbrev: &str, linescore: &[u64]) -> Row<'static> {
+    let mut cells = Vec::with_capacity(10);
+    cells.push(team_abbrev.to_string());
+    for inning in 0..9 {
+        cells.push(
+            linescore
+                .get(inning)
+                .map(|score| score.to_string())
+                .unwrap_or_else(|| "-".to_string()),
+        );
+    }
+    Row::new(cells)
 }
 
 fn format_game_details(game: &GameSummary) -> Text<'static> {
@@ -196,6 +241,12 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
                 lines.push(Line::from("No live game details available at this time"));
             }
         }
+        // lines.push(Line::from(format!(
+        //     "Home: {}", game.home_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(" ")
+        // )));
+        // lines.push(Line::from(format!(
+        //     "Away: {}", game.away_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(" ")
+        // )));
         Text::from(lines)
     } else {
         lines.push(Line::from(""));
@@ -203,6 +254,13 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
             "{} {:?} @ {} {:?}",
             game.away_team_abbrev, game.away_team_score.unwrap_or(0),
             game.home_team_abbrev, game.home_team_score.unwrap_or(0),
+        )));
+        lines.push(Line::from(""));
+        lines.push(Line::from(format!(
+            "{}: {}", game.home_team_abbrev, game.home_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(", ")
+        )));
+        lines.push(Line::from(format!(
+            "{}: {}", game.away_team_abbrev, game.away_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(", ")
         )));
         lines.push(Line::from(""));
         lines.push(Line::from("No additional info about this matchup available"));

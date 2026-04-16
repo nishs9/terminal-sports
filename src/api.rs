@@ -323,6 +323,41 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
     let away_team_score = parse_score(&away_team["score"]);
     let home_team_score = parse_score(&home_team["score"]);
 
+    log::debug!("Home team linescores: {:?}", home_team["linescores"]);
+
+    let home_linescore: Vec<u64> = match home_team["linescores"].as_array() {
+        Some(arr) => arr
+            .iter()
+            .filter_map(|raw_linescore| {
+                log::debug!("Raw linescore: {:?}", raw_linescore);
+                raw_linescore["value"].as_f64().map(|f| f as u64).or_else(|| {
+                    log::warn!("Failed to parse home linescore from JSON");
+                    None
+                })
+            })
+            .collect(),
+        None => {
+            log::warn!("Failed to parse home linescores from JSON");
+            return None;
+        }
+    };
+    let away_linescore: Vec<u64> = match away_team["linescores"].as_array() {
+        Some(arr) => arr
+            .iter()
+            .filter_map(|raw_linescore| {
+                raw_linescore["value"].as_f64().map(|f| f as u64).or_else(|| {
+                    log::warn!("Failed to parse home linescore from JSON");
+                    None
+                })
+            })
+            .collect(),
+        None => {
+            log::warn!("Failed to parse home linescores from JSON");
+            return None;
+        }
+    };
+
+
     let game_status = get_game_status(competition["status"]["type"]["state"].as_str()?);
     let short_inning = match competition["status"]["type"]["shortDetail"].as_str() {
         Some(s) => s.to_string(),
@@ -377,6 +412,8 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
                 full_inning,
                 away_team_score,
                 home_team_score,
+                home_linescore,
+                away_linescore,
                 game_status,
                 status_text: status_text.clone(),
                 balls,
@@ -385,6 +422,29 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
                 bases: Some(bases),
             })
         },
+        GameStatus::Final => {
+            Some(GameSummary {
+                game_id,
+                game_date,
+                league: league.clone(),
+                odds,
+                details: None,
+                away_team_abbrev,
+                home_team_abbrev,
+                short_inning,
+                full_inning,
+                away_team_score,
+                home_team_score,
+                home_linescore,
+                away_linescore,
+                game_status,
+                status_text: status_text.clone(),
+                balls: Some(balls),
+                strikes: Some(strikes),
+                outs: Some(outs),
+                bases: Some(bases),
+            })
+        }
         _ => Some(GameSummary {
             game_id,
             game_date,
@@ -397,6 +457,8 @@ fn parse_game_data(event: &Value, league: &League) -> Option<GameSummary> {
             full_inning,
             away_team_score,
             home_team_score,
+            home_linescore: Vec::new(),
+            away_linescore: Vec::new(),
             game_status,
             status_text: status_text.clone(),
             balls: Some(balls),
