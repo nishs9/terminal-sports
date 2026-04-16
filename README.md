@@ -6,18 +6,20 @@ For the initial version, I will be focusing on baseball scores (MLB + WBC). Howe
 
 ## Current Features
 - View live MLB + WBC scores/results (updated every 10 seconds by default)
-- View pre-game details about matchups (odds, expected starters, etc.)
-- View in-game details about matchups (current pitcher-batter matchup, baserunners, etc.)
+- View pre-game details such as odds, expected starters, etc.
+- View in-game details such as current pitcher-batter matchup, baserunners, last play, etc.
+- View post-game details such as winning/losing pitcher, final score + linescore, etc.
 
 ## Planned Features
+- Support more sports (NBA, NFL, etc.)
 - View play by play data for indidual games
 - View box score data for ongoing and completed games
-- View even more details about individual MLB + WBC matchups (pre-game, in-game, and post-game)
-- Support more sports (NBA, NFL, etc.)
 - Users can run the service headlessly and subscribe to an alerts system for games of their choosing
 
 ## Data Sources
-- ESPN Public API (add link here)
+- [ESPN Public API](https://github.com/pseudo-r/Public-ESPN-API)
+
+I'm not necessarily using the webserver that is at the repo above, but I am calling the same underlying ESPN API endpoints.
 
 ## Getting Started
 
@@ -31,10 +33,3 @@ cargo run
 ```
 
 You will definitely get some compiler warnings but running those commands should pull up the scores UI within your terminal.
-
-You can also run the service using the command `sports` if you install it to your system path:
-
-```
-cargo install --path .
-sports
-```
