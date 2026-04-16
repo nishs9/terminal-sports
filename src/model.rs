@@ -52,6 +52,9 @@ pub struct GameSummary {
     pub outs: Option<u64>,
 
     pub bases: Option<BaseState>,
+
+    pub winning_pitcher: Option<String>,
+    pub losing_pitcher: Option<String>
 }
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]

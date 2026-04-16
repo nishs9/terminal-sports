@@ -149,13 +149,14 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
             let details_split = Layout::default()
                 .direction(Direction::Vertical)
                 .constraints([
-                    Constraint::Length(3),
+                    Constraint::Length(7),
                     Constraint::Length(5),
                 ])
                 .split(details_inner);
 
             let info_paragraph = Paragraph::new(format_game_details(selected_game));
             let linescore_table = generate_linescore_table(selected_game);
+            frame.render_widget(game_details_box, list_game_details);
             frame.render_widget(info_paragraph, details_split[0]);
             frame.render_widget(linescore_table, details_split[1]);
         }
@@ -261,6 +262,12 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
             game.home_team_abbrev, game.home_team_score.unwrap_or(0),
         )));
         lines.push(Line::from(""));
+        lines.push(Line::from(format!(
+            "W: {}", game.winning_pitcher.as_ref().unwrap_or(&"unknown".to_string())
+        )));
+        lines.push(Line::from(format!(
+            "L: {}", game.losing_pitcher.as_ref().unwrap_or(&"unknown".to_string())
+        )));
         Text::from(lines)
     }
 }

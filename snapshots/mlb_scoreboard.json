@@ -1,39 +1,40 @@
 [
   {
-    "game_id": "401814886",
-    "game_date": "04-10 @ 11:20 AM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "PIT",
-    "home_team_abbrev": "CHC",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 2,
-    "home_team_score": 0,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814877",
-    "game_date": "04-10 @ 03:40 PM PST",
+    "game_id": "401814947",
+    "game_date": "04-15 @ 09:35 AM PST",
     "league": "Mlb",
     "odds": null,
     "details": null,
     "away_team_abbrev": "ARI",
-    "home_team_abbrev": "PHI",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 5,
-    "home_team_score": 4,
+    "home_team_abbrev": "BAL",
+    "short_inning": "Final/10",
+    "full_inning": "Final/10",
+    "away_team_score": 8,
+    "home_team_score": 5,
+    "home_linescore": [
+      0,
+      1,
+      1,
+      0,
+      2,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "away_linescore": [
+      0,
+      0,
+      2,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      3
+    ],
     "game_status": "Final",
     "status_text": "Final",
     "balls": 0,
@@ -43,20 +44,275 @@
       "on_first": false,
       "on_second": false,
       "on_third": false
-    }
+    },
+    "winning_pitcher": "Ryan Thompson",
+    "losing_pitcher": "Tyler Wells"
   },
   {
-    "game_id": "401814880",
-    "game_date": "04-10 @ 03:40 PM PST",
+    "game_id": "401814954",
+    "game_date": "04-15 @ 10:15 AM PST",
     "league": "Mlb",
     "odds": null,
     "details": null,
-    "away_team_abbrev": "MIA",
+    "away_team_abbrev": "CLE",
+    "home_team_abbrev": "STL",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 3,
+    "home_team_score": 5,
+    "home_linescore": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0
+    ],
+    "away_linescore": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Dustin May",
+    "losing_pitcher": "Connor Brogdon"
+  },
+  {
+    "game_id": "401814953",
+    "game_date": "04-15 @ 10:40 AM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "BOS",
+    "home_team_abbrev": "MIN",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 9,
+    "home_team_score": 5,
+    "home_linescore": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "away_linescore": [
+      0,
+      0,
+      5,
+      0,
+      2,
+      2,
+      0,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Connelly Early",
+    "losing_pitcher": "Simeon Woods Richardson"
+  },
+  {
+    "game_id": "401814948",
+    "game_date": "04-15 @ 03:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "CHC",
+    "home_team_abbrev": "PHI",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 11,
+    "home_team_score": 2,
+    "home_linescore": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "away_linescore": [
+      0,
+      0,
+      3,
+      0,
+      2,
+      4,
+      1,
+      0,
+      1
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Shota Imanaga",
+    "losing_pitcher": "Jesus Luzardo"
+  },
+  {
+    "game_id": "401814949",
+    "game_date": "04-15 @ 03:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "KC",
     "home_team_abbrev": "DET",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 1,
+    "home_team_score": 2,
+    "home_linescore": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "away_linescore": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Kyle Finnegan",
+    "losing_pitcher": "Eli Morgan"
+  },
+  {
+    "game_id": "401814951",
+    "game_date": "04-15 @ 03:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "SF",
+    "home_team_abbrev": "CIN",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 3,
+    "home_team_score": 8,
+    "home_linescore": [
+      4,
+      3,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "away_linescore": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Rhett Lowder",
+    "losing_pitcher": "Tyler Mahle"
+  },
+  {
+    "game_id": "401814952",
+    "game_date": "04-15 @ 03:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "WSH",
+    "home_team_abbrev": "PIT",
     "short_inning": "Final",
     "full_inning": "Final",
     "away_team_score": 0,
     "home_team_score": 2,
+    "home_linescore": [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "away_linescore": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "game_status": "Final",
     "status_text": "Final",
     "balls": 0,
@@ -66,20 +322,44 @@
       "on_first": false,
       "on_second": false,
       "on_third": false
-    }
+    },
+    "winning_pitcher": "Carmen Mlodzinski",
+    "losing_pitcher": "Jake Irvin"
   },
   {
-    "game_id": "401814876",
-    "game_date": "04-10 @ 03:45 PM PST",
+    "game_id": "401814946",
+    "game_date": "04-15 @ 04:05 PM PST",
     "league": "Mlb",
     "odds": null,
     "details": null,
     "away_team_abbrev": "LAA",
-    "home_team_abbrev": "CIN",
+    "home_team_abbrev": "NYY",
     "short_inning": "Final",
     "full_inning": "Final",
-    "away_team_score": 10,
-    "home_team_score": 2,
+    "away_team_score": 4,
+    "home_team_score": 5,
+    "home_linescore": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "away_linescore": [
+      0,
+      0,
+      1,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
     "game_status": "Final",
     "status_text": "Final",
     "balls": 0,
@@ -89,30 +369,350 @@
       "on_first": false,
       "on_second": false,
       "on_third": false
-    }
+    },
+    "winning_pitcher": "David Bednar",
+    "losing_pitcher": "Jordan Romano"
   },
   {
-    "game_id": "401814881",
-    "game_date": "04-10 @ 04:07 PM PST",
+    "game_id": "401814950",
+    "game_date": "04-15 @ 04:15 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "MIA",
+    "home_team_abbrev": "ATL",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 3,
+    "home_team_score": 6,
+    "home_linescore": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      3,
+      0
+    ],
+    "away_linescore": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Bryce Elder",
+    "losing_pitcher": "Chris Paddack"
+  },
+  {
+    "game_id": "401814956",
+    "game_date": "04-15 @ 04:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "TB",
+    "home_team_abbrev": "CHW",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 8,
+    "home_team_score": 3,
+    "home_linescore": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3
+    ],
+    "away_linescore": [
+      0,
+      0,
+      1,
+      0,
+      2,
+      1,
+      4,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Jesse Scholtens",
+    "losing_pitcher": "Sean Burke"
+  },
+  {
+    "game_id": "401814957",
+    "game_date": "04-15 @ 04:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "TOR",
+    "home_team_abbrev": "MIL",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 1,
+    "home_team_score": 2,
+    "home_linescore": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "away_linescore": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Aaron Ashby",
+    "losing_pitcher": "Tyler Rogers"
+  },
+  {
+    "game_id": "401814955",
+    "game_date": "04-16 @ 05:10 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": null,
+    "away_team_abbrev": "COL",
+    "home_team_abbrev": "HOU",
+    "short_inning": "Final",
+    "full_inning": "Final",
+    "away_team_score": 1,
+    "home_team_score": 3,
+    "home_linescore": [
+      2,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "away_linescore": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "game_status": "Final",
+    "status_text": "Final",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 0,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": "Spencer Arrighetti",
+    "losing_pitcher": "Jose Quintana"
+  },
+  {
+    "game_id": "401814959",
+    "game_date": "04-16 @ 06:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Andres Munoz pitches to Fernando Tatis Jr.",
+      "pitcher": {
+        "id": "40939",
+        "full_name": "Andres Munoz"
+      },
+      "batter": {
+        "id": "35983",
+        "full_name": "Fernando Tatis Jr."
+      }
+    },
+    "away_team_abbrev": "SEA",
+    "home_team_abbrev": "SD",
+    "short_inning": "Bot 9th",
+    "full_inning": "Bottom 9th",
+    "away_team_score": 6,
+    "home_team_score": 2,
+    "home_linescore": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "away_linescore": [
+      0,
+      2,
+      0,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 0,
+    "strikes": 0,
+    "outs": 1,
+    "bases": {
+      "on_first": true,
+      "on_second": true,
+      "on_third": true
+    },
+    "winning_pitcher": null,
+    "losing_pitcher": null
+  },
+  {
+    "game_id": "401814960",
+    "game_date": "04-16 @ 06:40 PM PST",
+    "league": "Mlb",
+    "odds": null,
+    "details": {
+      "last_play": "Pitch 2 : Strike 1 Foul",
+      "pitcher": {
+        "id": "40855",
+        "full_name": "Joel Kuhnel"
+      },
+      "batter": {
+        "id": "35004",
+        "full_name": "Danny Jansen"
+      }
+    },
+    "away_team_abbrev": "TEX",
+    "home_team_abbrev": "ATH",
+    "short_inning": "Top 9th",
+    "full_inning": "Top 9th",
+    "away_team_score": 5,
+    "home_team_score": 6,
+    "home_linescore": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      2,
+      2,
+      0
+    ],
+    "away_linescore": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    "game_status": "InProgress",
+    "status_text": "In Progress",
+    "balls": 1,
+    "strikes": 1,
+    "outs": 1,
+    "bases": {
+      "on_first": false,
+      "on_second": false,
+      "on_third": false
+    },
+    "winning_pitcher": null,
+    "losing_pitcher": null
+  },
+  {
+    "game_id": "401814958",
+    "game_date": "04-16 @ 07:00 PM PST",
     "league": "Mlb",
     "odds": null,
     "details": {
       "last_play": "Pitch 2 : Ball 1",
       "pitcher": {
-        "id": "41318",
-        "full_name": "Braydon Fisher"
+        "id": "42848",
+        "full_name": "Austin Warren"
       },
       "batter": {
-        "id": "4297998",
-        "full_name": "Austin Martin"
+        "id": "38309",
+        "full_name": "Will Smith"
       }
     },
-    "away_team_abbrev": "MIN",
-    "home_team_abbrev": "TOR",
-    "short_inning": "Top 9th",
-    "full_inning": "Top 9th",
-    "away_team_score": 4,
-    "home_team_score": 10,
+    "away_team_abbrev": "NYM",
+    "home_team_abbrev": "LAD",
+    "short_inning": "Bot 8th",
+    "full_inning": "Bottom 8th",
+    "away_team_score": 1,
+    "home_team_score": 8,
+    "home_linescore": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      5
+    ],
+    "away_linescore": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
     "game_status": "InProgress",
     "status_text": "In Progress",
     "balls": 1,
@@ -120,272 +720,10 @@
     "outs": 2,
     "bases": {
       "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814878",
-    "game_date": "04-10 @ 04:10 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "ATH",
-    "home_team_abbrev": "NYM",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 4,
-    "home_team_score": 0,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814882",
-    "game_date": "04-10 @ 04:10 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "NYY",
-    "home_team_abbrev": "TB",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 3,
-    "home_team_score": 5,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814879",
-    "game_date": "04-10 @ 04:15 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "CLE",
-    "home_team_abbrev": "ATL",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 5,
-    "home_team_score": 11,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814883",
-    "game_date": "04-10 @ 04:15 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": {
-      "last_play": "Pitch 2 : Strike 1 Looking",
-      "pitcher": {
-        "id": "4719088",
-        "full_name": "Blade Tidwell"
-      },
-      "batter": {
-        "id": "41264",
-        "full_name": "Jeremiah Jackson"
-      }
-    },
-    "away_team_abbrev": "SF",
-    "home_team_abbrev": "BAL",
-    "short_inning": "Bot 9th",
-    "full_inning": "Bottom 9th",
-    "away_team_score": 6,
-    "home_team_score": 1,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 1,
-    "strikes": 1,
-    "outs": 1,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814885",
-    "game_date": "04-10 @ 04:40 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "CHW",
-    "home_team_abbrev": "KC",
-    "short_inning": "Final",
-    "full_inning": "Final",
-    "away_team_score": 0,
-    "home_team_score": 2,
-    "game_status": "Final",
-    "status_text": "Final",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814887",
-    "game_date": "04-10 @ 04:40 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "WSH",
-    "home_team_abbrev": "MIL",
-    "short_inning": "Top 8th",
-    "full_inning": "Top 8th",
-    "away_team_score": 3,
-    "home_team_score": 3,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814884",
-    "game_date": "04-11 @ 05:15 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": {
-      "last_play": "Pitch 1 : Ball 1",
-      "pitcher": {
-        "id": "40937",
-        "full_name": "Dustin May"
-      },
-      "batter": {
-        "id": "32532",
-        "full_name": "Willson Contreras"
-      }
-    },
-    "away_team_abbrev": "BOS",
-    "home_team_abbrev": "STL",
-    "short_inning": "Top 6th",
-    "full_inning": "Top 6th",
-    "away_team_score": 2,
-    "home_team_score": 3,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 1,
-    "strikes": 0,
-    "outs": 1,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814888",
-    "game_date": "04-11 @ 06:40 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": null,
-    "away_team_abbrev": "COL",
-    "home_team_abbrev": "SD",
-    "short_inning": "End 1st",
-    "full_inning": "End 1st",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
-  },
-  {
-    "game_id": "401814889",
-    "game_date": "04-11 @ 06:40 PM PST",
-    "league": "Mlb",
-    "odds": null,
-    "details": {
-      "last_play": "Tatsuya Imai pitches to Julio Rodriguez",
-      "pitcher": {
-        "id": "5330833",
-        "full_name": "Tatsuya Imai"
-      },
-      "batter": {
-        "id": "41044",
-        "full_name": "Julio Rodriguez"
-      }
-    },
-    "away_team_abbrev": "HOU",
-    "home_team_abbrev": "SEA",
-    "short_inning": "Bot 1st",
-    "full_inning": "Bottom 1st",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "InProgress",
-    "status_text": "In Progress",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": true,
       "on_second": true,
       "on_third": false
-    }
-  },
-  {
-    "game_id": "401814890",
-    "game_date": "04-11 @ 07:10 PM PST",
-    "league": "Mlb",
-    "odds": {
-      "moneyline": "LAD -232",
-      "spread": "-1.5",
-      "over_under": "8.5"
     },
-    "details": null,
-    "away_team_abbrev": "TEX",
-    "home_team_abbrev": "LAD",
-    "short_inning": "4/10 - 10:10 PM EDT",
-    "full_inning": "Scheduled",
-    "away_team_score": 0,
-    "home_team_score": 0,
-    "game_status": "Scheduled",
-    "status_text": "Scheduled",
-    "balls": 0,
-    "strikes": 0,
-    "outs": 0,
-    "bases": {
-      "on_first": false,
-      "on_second": false,
-      "on_third": false
-    }
+    "winning_pitcher": null,
+    "losing_pitcher": null
   }
 ]
