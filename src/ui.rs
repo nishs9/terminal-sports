@@ -145,8 +145,19 @@ pub fn draw_tui(frame: &mut Frame, app_state: &AppState) {
             frame.render_widget(info_paragraph, main_details[0]);
             frame.render_widget(linescore_table, main_details[1]);
         } else {
-            let info_paragraph = Paragraph::new(format_game_details(selected_game)).block(game_details_box);
-            frame.render_widget(info_paragraph, list_game_details);
+            let details_inner = game_details_box.inner(list_game_details);
+            let details_split = Layout::default()
+                .direction(Direction::Vertical)
+                .constraints([
+                    Constraint::Length(3),
+                    Constraint::Length(5),
+                ])
+                .split(details_inner);
+
+            let info_paragraph = Paragraph::new(format_game_details(selected_game));
+            let linescore_table = generate_linescore_table(selected_game);
+            frame.render_widget(info_paragraph, details_split[0]);
+            frame.render_widget(linescore_table, details_split[1]);
         }
         frame.render_stateful_widget(game_list, list_main, &mut list_state);
     }
@@ -241,12 +252,6 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
                 lines.push(Line::from("No live game details available at this time"));
             }
         }
-        // lines.push(Line::from(format!(
-        //     "Home: {}", game.home_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(" ")
-        // )));
-        // lines.push(Line::from(format!(
-        //     "Away: {}", game.away_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(" ")
-        // )));
         Text::from(lines)
     } else {
         lines.push(Line::from(""));
@@ -256,14 +261,6 @@ fn format_game_details(game: &GameSummary) -> Text<'static> {
             game.home_team_abbrev, game.home_team_score.unwrap_or(0),
         )));
         lines.push(Line::from(""));
-        lines.push(Line::from(format!(
-            "{}: {}", game.home_team_abbrev, game.home_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(", ")
-        )));
-        lines.push(Line::from(format!(
-            "{}: {}", game.away_team_abbrev, game.away_linescore.iter().map(|score| format!("{}", score)).collect::<Vec<String>>().join(", ")
-        )));
-        lines.push(Line::from(""));
-        lines.push(Line::from("No additional info about this matchup available"));
         Text::from(lines)
     }
 }
